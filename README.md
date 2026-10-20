@@ -354,3 +354,5 @@ Same as a leadership entry: one Markdown file in `src/content/exploring/` plus p
 - Galicia water map page: enlarged the sticky-note, loop, import, result and theme images, widened the themes table, shrank the Orff diagram, and replaced the process GIF with the literature review collage
 - Media page: restored the original image size (an earlier layout edit had enlarged the news images by accident)
 - Microcontroller page: removed the "The circuit running." animation beside the top GIF
+- Microcontroller page: restored the breadboard animation beside the top GIF, without its caption
+- Microcontroller page: the four lab photos are now a header collage under the cover, the "Controls lab" text is removed, and the PIC16F887 photo lines up with the PedagoBot column

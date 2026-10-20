@@ -7,32 +7,35 @@ organization: Mechatronics Engineering
 order: 9
 cover: ../../assets/projects/microcontroller-controls-labs/ball-and-beam.gif
 coverAlt: Animation of a ball-and-beam rig on a lab bench next to a laptop plotting the response live as the ball is balanced.
-coverWidth: 22
+coverWidth: 49
+coverAside:
+  src: ../../assets/projects/microcontroller-controls-labs/breadboard-running.gif
+  alt: "Animation of the breadboard circuit running, with LEDs lighting in turn."
 tools: [C, PIC16F887, MPLAB, Multisim]
-gallery:
-  - src: ../../assets/projects/microcontroller-controls-labs/microcontroller-boards.jpg
-    alt: "Two green circuit boards and a white development board wired together inside a clear acrylic case, seen from above and turned on its side"
-    caption: "Microcontroller boards in their acrylic case."
-  - src: ../../assets/projects/microcontroller-controls-labs/analog-bench.jpg
-    alt: "A lab bench with two power supplies, a multimeter, an oscilloscope, a laptop and jumper wires on a breadboard"
-    caption: "Analog circuit lab bench."
-  - src: ../../assets/projects/microcontroller-controls-labs/analog-breadboard.jpg
-    alt: "A large breadboard densely wired with jumper wires and green tape labels"
-    caption: "A labelled breadboard circuit."
-  - src: ../../assets/projects/microcontroller-controls-labs/analog-leds.jpg
-    alt: "A breadboard with colourful jumper wires and green LEDs lit, beside a signal generator and an oscilloscope"
-    caption: "A breadboard circuit with lit LEDs."
 rich: true
-galleryHeight: 22
 tags: [robotics]
 ---
+![Two green circuit boards and a white development board wired together inside a clear acrylic case, seen from above and turned on its side](../../assets/projects/microcontroller-controls-labs/microcontroller-boards.jpg "even19: Microcontroller boards in their acrylic case.")
+![A lab bench with two power supplies, a multimeter, an oscilloscope, a laptop and jumper wires on a breadboard](../../assets/projects/microcontroller-controls-labs/analog-bench.jpg "Analog circuit lab bench.")
+![A large breadboard densely wired with jumper wires and green tape labels](../../assets/projects/microcontroller-controls-labs/analog-breadboard.jpg "A labelled breadboard circuit.")
+![A breadboard with colourful jumper wires and green LEDs lit, beside a signal generator and an oscilloscope](../../assets/projects/microcontroller-controls-labs/analog-leds.jpg "A breadboard circuit with lit LEDs.")
+
 Lab and course work from my mechatronics degree at McMaster: embedded programming in C on a PIC16F887 microcontroller, a digital circuit taken from analysis through simulation to a working breadboard, and a controls lab balancing a ball on a beam with the live response plotted on a laptop. The code for the controls work is in my [Control systems repository on GitHub](https://github.com/madelinelebreton/control-systems).
+
+<div class="two-col">
+<div>
 
 ## Introduction to Microcontroller Systems
 
-![A microcontroller board with a green LCD, connected by cables to a red programmer, beside handwritten notes.](../../assets/projects/microcontroller-controls-labs/pic-board.jpg "right: The PIC16F887 board, wired to its programmer.")
-
 The course covered programming a PIC16F887 in C, including the standard peripherals (I/O, timers, the ADC and a serial link), the internal structure of a processor, and an introduction to interrupts.
+
+</div>
+<div>
+
+![A microcontroller board with a green LCD, connected by cables to a red programmer, beside handwritten notes.](../../assets/projects/microcontroller-controls-labs/pic-board.jpg "w19: The PIC16F887 board, wired to its programmer.")
+
+</div>
+</div>
 
 <div class="two-col">
 <div>
@@ -110,7 +113,3 @@ I built the circuit on a breadboard with two dual JK flip-flop chips (74HC109N) 
 
 ![Four photos of a breadboard with green LEDs lighting in sequence.](../../assets/projects/microcontroller-controls-labs/breadboard-sequence.jpg "even8: The LEDs lighting in sequence on the breadboard.")
 ![A breadboard densely wired with jumper wires, with test leads clipped on and one green LED lit.](../../assets/projects/microcontroller-controls-labs/breadboard-build.jpg "The wired breadboard.")
-
-## Controls lab
-
-In a controls lab I balanced a ball on a beam, with the response plotted live on a laptop (the animation at the top of this page). The photos below are from the labs around it.
