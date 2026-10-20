@@ -1,0 +1,2009 @@
+@import '@fontsource/instrument-serif/latin-400.css';
+@import '@fontsource/instrument-serif/latin-400-italic.css';
+@import '@fontsource-variable/inter-tight/index.css';
+
+/*
+  Design: one blue ink on white paper (after the approved reference). A blue frame is available via --frame.
+  Change --blue to retune the whole site. Set --frame to var(--paper) to drop the frame.
+*/
+:root {
+  --blue: #244f78;
+  --blue-soft: #4a7099;
+  --paper: #ffffff;
+  --frame: var(--paper); /* set to var(--blue) for the blue frame around the page */
+  --line: rgba(36, 79, 120, 0.32);
+  --tint: rgba(36, 79, 120, 0.06);
+
+  --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter Tight Variable', 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --pad: clamp(1rem, 2.4vw, 2.25rem);
+  --gap: clamp(0.9rem, 1.6vw, 1.5rem);
+  --measure: 40rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: clamp(0.4rem, 1.6vw, 1.5rem);
+  background: var(--frame);
+  color: var(--blue);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  background: var(--paper);
+  max-width: 96rem;
+  margin: 0 auto;
+  min-height: calc(100vh - 3rem);
+  padding: var(--pad) var(--pad) 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  background: var(--blue);
+  color: var(--paper);
+  padding: 0.5rem 0.9rem;
+  z-index: 10;
+}
+.skip:focus {
+  top: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  display: grid;
+  grid-template-columns: 14rem minmax(0, 1fr) 12rem 11rem;
+  gap: var(--gap);
+  align-items: start;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+.site-header .mark {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  justify-self: start;
+}
+.site-header .mark .face {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: none;
+}
+.site-header nav {
+  grid-column: 3;
+}
+.site-header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.site-header a {
+  text-decoration: none;
+}
+/* WCAG 2.2 target size: at least 24px tall */
+.site-header ul a {
+  display: inline-block;
+  padding-block: 0.3rem;
+}
+.site-header nav a:hover,
+.site-header .contact a:hover {
+  text-decoration: underline;
+}
+.site-header nav a[aria-current='page'],
+.site-header .contact a[aria-current='page'] {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+.site-header .contact {
+  text-align: right;
+}
+
+/* ---------- Home hero ---------- */
+.hero {
+  margin: clamp(1.5rem, 4vw, 3.5rem) 0 clamp(1.25rem, 2.5vw, 2.25rem);
+  text-align: center;
+}
+.hero-inner {
+  display: inline-block;
+}
+.hero h1 {
+  font-size: clamp(3rem, 8.5vw, 7.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+}
+.hero .labels {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.15rem 1.5rem;
+  margin-top: 0.75rem;
+  font-size: clamp(0.85rem, 1.15vw, 1.1rem);
+  line-height: 1.2;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 0 0.75rem;
+}
+.section-head h2 {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+}
+.section-head .count,
+.section-head .view-all {
+  font-size: 0.82rem;
+}
+.section-head .view-all {
+  text-underline-offset: 0.2em;
+  padding-block: 0.4rem;
+}
+
+main {
+  flex: 1;
+}
+main:focus {
+  outline: none;
+}
+
+/* ---------- Project grid: every tile identical ---------- */
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: calc(var(--gap) * 1.6) var(--gap);
+  align-items: start; /* each tile keeps its own image ratio, top-aligned */
+}
+.tile {
+  min-width: 0;
+}
+.tile a {
+  display: block;
+  text-decoration: none;
+}
+.tile .frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--tint);
+}
+/* Home "Latest projects": each image keeps its own ratio (portrait covers stay portrait), top-aligned. */
+/* Equal-ratio variant for grids with only a few tiles */
+.grid.equal .tile .frame {
+  aspect-ratio: 4 / 5;
+}
+.grid.equal .tile .frame img {
+  height: 100%;
+  object-fit: cover;
+}
+.tile .frame.ratio img {
+  height: 100%;
+  object-fit: cover;
+}
+.tile .frame.is-empty {
+  aspect-ratio: 4 / 3;
+}
+.tile .frame img {
+  display: block;
+  width: 100%;
+  height: auto; /* natural ratio, from the image's own width and height attributes */
+  transition: transform 0.5s ease;
+}
+.tile a:hover .frame img {
+  transform: scale(1.025);
+}
+.tile a:focus-visible {
+  outline-offset: 6px;
+}
+.tile .flag {
+  position: absolute;
+  left: 0.6rem;
+  bottom: 0.6rem;
+  background: var(--paper);
+  color: var(--blue);
+  font-size: 0.74rem;
+  font-weight: 500;
+  padding: 0.15rem 0.5rem;
+}
+.tile .empty {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+.tile h3 {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0;
+  margin: 0.6rem 0 0.1rem;
+}
+.tile a:hover h3 {
+  text-decoration: underline;
+}
+.tile .meta {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--blue-soft);
+}
+
+/* ---------- Top band: intro with portrait, publications beside it ---------- */
+.top-band {
+  --cg: clamp(0.5rem, 1.5vw, 1.25rem);
+  display: grid;
+  /* Columns follow the photo strip: headshot under photo 1, bio under photo 2, Publications from photo 3. */
+  grid-template-columns: calc((100% - 4 * var(--cg)) * var(--b, 0.2)) calc((100% - 4 * var(--cg)) * var(--c, 0.2)) minmax(0, 1fr);
+  gap: var(--cg);
+  align-items: stretch;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+/* The headshot is the same size and shape as the first photo in the strip, and the bio sits under the
+   second photo, so the top band lines up with the strip above it. */
+.intro {
+  display: contents;
+}
+.intro-text {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  font-size: clamp(0.95rem, 1.2vw, 1.25rem);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+.intro p {
+  margin: 0;
+}
+.intro-text .section-head {
+  margin: 0 0 0.15rem;
+}
+.top-band .section-head h2 {
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+}
+.intro .more {
+  font-size: 0.82rem;
+  letter-spacing: 0;
+}
+.top-band > section:last-child {
+  grid-column: 3;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+}
+.pub-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.pub-cards li {
+  border: 1px solid var(--line);
+  padding: 0.8rem 1rem;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.pub-cards .title {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  margin: 0;
+}
+.pub-cards .by {
+  margin-left: 0.35rem;
+  font-size: 0.74rem;
+  color: var(--blue-soft);
+}
+.pub-cards .by strong {
+  font-weight: 500;
+  color: var(--blue);
+  margin-right: 0.4rem;
+}
+
+/* ---------- Image grids sit straight on the white page (no coloured panel) ---------- */
+.panel {
+  background: transparent;
+  color: var(--blue);
+  padding: 0;
+}
+.panel .tile .frame {
+  background: var(--tint);
+}
+.panel .tile .meta {
+  color: var(--blue-soft);
+}
+.panel .tile .flag {
+  background: var(--blue);
+  color: var(--paper);
+}
+.panel :focus-visible {
+  outline-color: var(--blue);
+}
+
+/* ---------- Inner pages ---------- */
+.page-head {
+  margin: clamp(2.5rem, 6vw, 5rem) 0 2rem;
+  max-width: var(--measure);
+}
+.page-head h1 {
+  font-size: clamp(2.6rem, 6.5vw, 5.5rem);
+  line-height: 0.95;
+}
+.lede {
+  margin: 1rem 0 0;
+  color: var(--blue-soft);
+}
+/* single-line subtitle on wide screens; wraps normally on narrow ones */
+@media (min-width: 900px) {
+  .lede.one-line {
+    max-width: none;
+    white-space: nowrap;
+  }
+}
+
+.back {
+  display: inline-block;
+  margin-top: 2.5rem;
+  font-size: 0.82rem;
+}
+
+.prose {
+  max-width: var(--measure);
+}
+.prose h2 {
+  font-size: 1.9rem;
+  margin: 2.4rem 0 0.6rem;
+}
+.prose p,
+.prose ul {
+  margin: 0 0 1rem;
+}
+.prose ul {
+  padding-left: 1.2rem;
+}
+.prose li + li {
+  margin-top: 0.3rem;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.5rem;
+  font-size: 0.88rem;
+}
+.prose th,
+.prose td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.prose th {
+  font-weight: 600;
+}
+@media (max-width: 40rem) {
+  .prose table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+.prose code {
+  font-size: 0.85em;
+  overflow-wrap: anywhere;
+}
+.prose ol {
+  margin: 0 0 1rem;
+  padding-left: 1.4rem;
+}
+.prose img {
+  margin: 1.5rem 0;
+  width: auto;
+  max-height: 80vh;
+}
+
+.prose figure.fig {
+  margin: 1.5rem 0;
+}
+.prose figure.fig img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 34rem;
+  margin: 0;
+}
+.prose figcaption {
+  margin-top: 0.45rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--blue-soft);
+}
+.prose .fig-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+  margin: 1.5rem 0;
+}
+.prose .fig-row figure.fig {
+  flex: 1 1 12rem;
+  min-width: 0;
+  margin: 0;
+}
+.prose .fig-row figure.fig.wide {
+  flex: 3 1 22rem;
+  width: auto;
+  max-width: none;
+}
+.prose .fig-row figure.fig.wide img {
+  max-height: 28rem;
+}
+.prose .fig-row figure.fig.small {
+  flex: 0 1 8rem;
+  width: auto;
+  max-width: 8rem;
+}
+.prose .fig-row figure.fig.small img {
+  max-height: 14rem;
+}
+.prose .fig-row.even figure.fig {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+.prose .fig-row.even figure.fig img {
+  width: auto;
+  max-width: 100%;
+  height: var(--even-h, 11rem);
+  max-height: none;
+  object-fit: contain;
+}
+.prose .fig-row.even-lg figure.fig img {
+  height: 13rem;
+}
+.prose .fig-row.even-xl figure.fig img {
+  height: 16rem;
+}
+/* in even-height rows a long caption wraps to the image width instead of widening the figure */
+.prose .fig-row.even figcaption {
+  width: 0;
+  min-width: 100%;
+}
+.prose .fig-row figure.fig img {
+  width: 100%;
+  max-height: 22rem;
+  object-fit: contain;
+  object-position: left top;
+}
+
+/* rich project pages: text column on the left, figures in a right-hand column beside the text they describe */
+.prose.rich {
+  max-width: 64rem;
+}
+.prose.rich > p,
+.prose.rich > ul,
+.prose.rich > ol,
+.prose.rich > h2,
+.prose.rich > h3,
+.prose.rich > table,
+.prose.rich > blockquote {
+  max-width: var(--measure);
+}
+.prose.rich > h2,
+.prose.rich > h3 {
+  clear: both;
+}
+.prose.rich h3 {
+  font-size: 1.35rem;
+  margin: 1.8rem 0 0.5rem;
+}
+.prose.rich > blockquote {
+  margin: 0 0 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--line);
+}
+.prose.rich::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.prose.rich figure.fig.right,
+.prose.rich figure.fig.left {
+  width: min(21rem, 38%);
+  margin: 0.3rem 0 1.25rem;
+}
+.prose.rich figure.fig.right {
+  float: right;
+  clear: right;
+  margin-left: 2rem;
+}
+.prose.rich figure.fig.left {
+  float: left;
+  clear: left;
+  margin-right: 2rem;
+}
+.prose.rich figure.fig.right img,
+.prose.rich figure.fig.left img {
+  width: 100%;
+  max-height: 26rem;
+  object-fit: contain;
+}
+.prose.rich figure.fig.wide {
+  clear: both;
+}
+.prose.rich figure.fig.wide img {
+  max-height: 26rem;
+}
+.prose.rich figure.fig img {
+  max-height: 26rem;
+}
+.prose.rich figure.fig.small img {
+  max-height: 13rem;
+}
+/* tall figure (a rocket): large, along the right edge of the page beside the opening sections */
+.prose.rich {
+  position: relative;
+}
+.prose.rich figure.fig.tall {
+  position: absolute;
+  top: 0.4rem;
+  right: -17rem;
+  width: 14rem;
+  margin: 0;
+}
+.prose.rich figure.fig.tall img {
+  width: 100%;
+  max-height: none;
+}
+/* tallspan: the rocket runs from the top of the page title to the bottom of the team photo */
+.prose.rich figure.fig.tallspan {
+  top: -39.4rem;
+  right: -13.6rem; /* clears the section-link tiles above the text */
+  width: 7rem;
+}
+/* narrower screens: no room beside the text, so the rocket lies on its side as a full-width strip */
+@media (max-width: 1300px) {
+  .prose.rich figure.fig.tall {
+    position: static;
+    container-type: inline-size;
+    width: min(100%, 44rem);
+    top: auto;
+    right: auto;
+    margin: 1.5rem 0;
+    clear: both;
+  }
+  .prose.rich figure.fig.tall img {
+    width: 8.64cqw;
+    height: auto;
+    max-width: none;
+    transform-origin: 0 0;
+    transform: translateX(100cqw) rotate(90deg);
+    margin-bottom: calc(8.64cqw - 100cqw);
+  }
+  .prose.rich figure.fig.tall figcaption {
+    margin-top: 0.6rem;
+  }
+}
+@media (max-width: 900px) {
+  .prose.rich figure.fig.right,
+  .prose.rich figure.fig.left {
+    float: none;
+    width: 100%;
+    max-width: var(--measure);
+    margin: 1.25rem 0;
+  }
+}
+
+.project-meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.3rem 1.25rem;
+  margin: 1.25rem 0 0;
+  font-size: 0.88rem;
+  max-width: var(--measure);
+}
+.project-meta dt {
+  color: var(--blue-soft);
+}
+.project-meta dd {
+  margin: 0;
+}
+
+.project-cover {
+  margin: 2rem 0;
+  max-width: 52rem;
+  background: var(--tint);
+}
+.project-cover img {
+  width: auto;
+  max-width: 100%;
+  max-height: 75vh;
+  margin: 0 auto;
+}
+
+.notice {
+  max-width: var(--measure);
+  border: 1px solid var(--line);
+  background: var(--tint);
+  padding: 0.7rem 1rem;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.55rem 1.1rem;
+  background: var(--blue);
+  color: var(--paper);
+  text-decoration: none;
+  font-weight: 500;
+}
+.btn:hover {
+  text-decoration: underline;
+}
+
+.pubs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: var(--measure);
+}
+.pubs li {
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+}
+.pubs .venue {
+  color: var(--blue-soft);
+  font-size: 0.88rem;
+  margin-top: 0.25rem;
+}
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.8rem;
+}
+.footer p {
+  margin: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .top-band {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 1.5rem;
+  }
+  .intro {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(1rem, 3vw, 2rem);
+  }
+  .intro-text {
+    flex: 1;
+    font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  }
+  .top-band > section:last-child {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 820px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .site-header {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1.1rem;
+  }
+  .site-header .mark {
+    grid-column: 1 / -1;
+  }
+  .site-header nav {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .site-header .contact {
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile .frame img {
+    transition: none;
+  }
+  .tile a:hover .frame img {
+    transform: none;
+  }
+}
+
+/* ---------- Leadership & Awards ---------- */
+.lead-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.lead {
+  display: grid;
+  grid-template-columns: minmax(0, 18rem) minmax(0, 1fr);
+  gap: var(--gap) clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+  padding: 2rem 0;
+  border-top: 1px solid var(--line);
+}
+.lead h2 {
+  font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+}
+.lead h2 + .lead-body {
+  margin-top: 0.9rem;
+}
+.lead-meta {
+  margin: 0.45rem 0 0.9rem;
+  font-size: 0.82rem;
+  color: var(--blue-soft);
+}
+.lead-body p {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+}
+.lead-links {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  font-size: 0.85rem;
+}
+.lead-panel {
+  --tile: 19rem;
+  justify-self: start;
+  width: min(100%, calc(var(--cols) * var(--tile) + (var(--cols) - 1) * var(--gap)));
+}
+.shots {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  gap: var(--gap);
+}
+.shots li {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--tint);
+}
+.shots img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.awards {
+  margin: 0 0 2.25rem;
+}
+.awards ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+.awards li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 32rem;
+  gap: 0.15rem 1.5rem;
+  padding: 0.32rem 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+.awards .a-meta {
+  color: var(--blue-soft);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 900px) {
+  .awards li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Exploring!: every photo uncropped, all at one height. */
+.lead-list.uniform .lead {
+  padding: 1.5rem 0;
+}
+.lead-list.uniform .masonry {
+  --h: 10rem;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+.lead-list.uniform .masonry::after {
+  display: none;
+}
+.lead-list.uniform .masonry li {
+  flex: 0 0 auto;
+  height: var(--h);
+  width: calc(var(--r) * var(--h));
+  max-width: 100%;
+  background: none;
+}
+.lead-list.uniform .masonry img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lead-list.uniform .shot-btn {
+  height: 100%;
+}
+.lead-list.uniform .gallery-panel {
+  max-width: 60rem;
+}
+/* Gallery sized to fill exactly 2 rows (French Alps): height follows the panel width, so the row split holds at every desktop width. */
+.lead-list.uniform .gallery-panel:has(.two-rows) {
+  container-type: inline-size;
+  max-width: 66rem;
+}
+.lead-list.uniform .masonry.two-rows {
+  --h: calc((100cqw - 3 * 0.5rem) / var(--fit));
+}
+@media (max-width: 560px) {
+  .lead-list.uniform .masonry,
+  .lead-list.uniform .masonry.two-rows {
+    --h: 7rem;
+  }
+}
+
+/* Compact entries (Athletics): smaller photos so the section is shorter to scroll. */
+.lead-list.compact .lead {
+  padding: 1.5rem 0;
+}
+.lead-list.compact .lead-panel {
+  --tile: 11rem;
+}
+.lead-list.compact .masonry {
+  --row: 8rem;
+  gap: 0.5rem;
+}
+.lead-list.compact .gallery-panel {
+  max-width: 54rem;
+}
+
+@media (max-width: 1100px) {
+  .lead {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .lead-panel {
+    --tile: 22rem;
+  }
+  .lead-list.compact .lead-panel {
+    --tile: 12rem;
+  }
+}
+@media (max-width: 560px) {
+  .shots {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .awards li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Exploring! sections ---------- */
+.explore-section {
+  margin-top: 3.5rem;
+}
+.section-note {
+  max-width: 40rem;
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- Photo-heavy entries: masonry gallery + lightbox ---------- */
+.gallery-panel {
+  width: 100%;
+  min-width: 0;
+}
+.masonry {
+  /* Justified rows: each row fills the width, photos keep their own ratio and read left to right in the order written. */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  --row: 15rem;
+}
+.masonry::after {
+  content: '';
+  flex-grow: 1000;
+}
+/* one-row galleries: all photos side by side at a shared height */
+.masonry.one-row {
+  flex-wrap: nowrap;
+}
+.masonry.one-row::after {
+  display: none;
+}
+.masonry li {
+  margin: 0;
+  background: var(--tint);
+  flex: calc(var(--r) * 100) 1 calc(var(--r) * var(--row));
+  min-width: 0;
+}
+.masonry img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.shot-btn {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+.shot-btn:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+.lightbox {
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 1rem;
+  border: 0;
+  background: rgba(14, 32, 52, 0.96);
+  color: var(--paper);
+}
+.lightbox[open] {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+}
+.lightbox figure {
+  margin: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.6rem;
+  justify-items: center;
+}
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 0;
+  object-fit: contain;
+}
+.lightbox figcaption {
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 54rem;
+}
+.lb-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.lb-bar button {
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--paper);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0.45rem 1.1rem;
+  cursor: pointer;
+}
+.lb-bar button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+.lb-bar button:focus-visible {
+  outline: 3px solid var(--paper);
+  outline-offset: 2px;
+}
+.lb-bar button[hidden] {
+  display: none;
+}
+@media (max-width: 1000px) {
+  .masonry {
+    --row: 13rem;
+  }
+}
+@media (max-width: 560px) {
+  .masonry {
+    --row: 8rem;
+    gap: 0.6rem;
+  }
+}
+.jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ---------- Project gallery: natural ratios, top-aligned, captions below ---------- */
+.p-gallery-wrap {
+  margin-top: 2.5rem;
+}
+.p-gallery {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: calc(var(--gap) * 1.4) var(--gap);
+  align-items: start;
+}
+.p-gallery li.wide {
+  grid-column: 1 / -1;
+}
+.p-gallery figure {
+  margin: 0;
+}
+.p-gallery img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 40rem;
+}
+.p-gallery li.wide img {
+  max-height: 48rem;
+}
+.p-gallery figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--blue-soft);
+}
+.p-gallery.even {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.p-gallery.even li,
+.p-gallery.even li.wide {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+.p-gallery.even img,
+.p-gallery.even li.wide img {
+  height: var(--gh, 14rem);
+  max-height: none;
+  object-fit: contain;
+}
+.p-gallery.even figcaption {
+  width: 0;
+  min-width: 100%;
+}
+/* compact projects: smaller images throughout */
+article.compact .project-cover {
+  max-width: 34rem;
+  width: fit-content;
+  background: none;
+}
+article.compact .project-cover img {
+  max-height: 22rem;
+}
+article.compact .prose img {
+  max-height: 16rem;
+}
+article.compact .prose figure.fig[style*='width'] img {
+  max-height: none; /* a figure given a width (w40:) sets its own size */
+}
+article.compact .p-gallery li.wide {
+  grid-column: span 2;
+}
+article.compact .p-gallery img,
+article.compact .p-gallery li.wide img {
+  max-height: 14rem;
+}
+@media (max-width: 1000px) {
+  .p-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .p-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- CV page: inline PDF view ---------- */
+.doc-embed {
+  margin: 2.5rem 0 0;
+}
+.doc-embed .prose {
+  max-width: none; /* the heading can use the full width of the embed */
+}
+.doc-embed .prose h2 {
+  margin-top: 0;
+}
+.doc-embed object {
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--ratio);
+  min-height: 24rem;
+  max-height: 90vh;
+  border: 1px solid var(--line);
+  background: var(--tint);
+}
+.doc-embed iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--ratio);
+  min-height: 24rem;
+  max-height: 90vh;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.doc-embed video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  background: var(--tint);
+}
+.doc-embed object p {
+  padding: 1rem;
+  margin: 0;
+}
+.doc-embed .doc-open {
+  margin: 0.5rem 0 0;
+  font-size: 0.82rem;
+}
+
+.cv-view {
+  margin: 0 0 3rem;
+  max-width: 62rem;
+  container-type: inline-size;
+}
+/* tall enough for both letter-size pages at the frame's width, so the page scrolls instead of the frame */
+.cv-view object {
+  display: block;
+  width: 100%;
+  height: calc(100cqw * 2.59 + 2.5rem);
+  min-height: 32rem;
+  border: 1px solid var(--line);
+  background: var(--tint);
+}
+.cv-view object p {
+  padding: 1rem;
+  margin: 0;
+}
+
+/* ---------- Home: entry points to Sport, Leadership and Exploring ---------- */
+.paths {
+  margin-top: 1.5rem;
+}
+.paths ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+}
+.paths a {
+  display: block;
+  text-decoration: none;
+}
+.paths img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--tint);
+}
+.paths .label {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  line-height: 1.1;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.2em;
+}
+.paths a:hover .label,
+.paths a:focus-visible .label {
+  text-decoration-color: currentColor;
+}
+.paths .note {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--blue-soft);
+}
+@media (max-width: 560px) {
+  .paths ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Home: three equal 4:3 photos spanning the full page width (the base .paths rules above). */
+
+/* Exploring! overview: four photo tiles that show the whole page at a glance */
+.paths.overview {
+  margin-top: 0.5rem;
+}
+.paths.overview ul {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.paths.overview img {
+  aspect-ratio: 4 / 3;
+}
+.paths.overview .label {
+  margin-top: 0.7rem;
+  font-size: 1.45rem;
+}
+@media (max-width: 900px) {
+  .paths.overview ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .paths.overview ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+  .paths.overview .label {
+    font-size: 1.2rem;
+  }
+}
+.explore-section.first {
+  margin-top: 3rem;
+}
+
+/* ---------- Work: filter chips ---------- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.5rem;
+}
+.filters[hidden],
+.tile[hidden] {
+  display: none;
+}
+.chip {
+  font: inherit;
+  font-size: 0.92rem;
+  color: var(--blue);
+  background: transparent;
+  border: 1px solid var(--blue);
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+}
+.chip:hover {
+  background: var(--tint);
+}
+.chip[aria-pressed='true'] {
+  color: var(--paper);
+  background: var(--blue);
+}
+.chip:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+
+/* ---------- News: image and headline list ---------- */
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.news-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 32rem);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: center;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
+}
+.news-list li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.news-img img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  background: var(--tint);
+}
+.news-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin: 0 0 0.6rem;
+  font-size: 0.82rem;
+  color: var(--blue-soft);
+}
+.news-blurb {
+  margin: 0.6rem 0 0;
+  max-width: 36rem;
+  font-size: 1rem;
+}
+.news-text h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.6rem, 2.6vw, 2.4rem);
+  line-height: 1.05;
+}
+.news-text h2 a {
+  text-decoration: none;
+}
+.news-text h2 a:hover,
+.news-text h2 a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+.news-text .read-more {
+  font-size: 0.88rem;
+}
+@media (max-width: 820px) {
+  .news-list li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+  .news-img {
+    max-width: 14rem;
+  }
+}
+
+/* ---------- Home: photo strip. Widths follow each photo's aspect ratio (--r), so every photo is the same height ---------- */
+.collage {
+  list-style: none;
+  margin: 0 0 clamp(1.25rem, 2.5vw, 2rem);
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(0.5rem, 1.5vw, 1.25rem);
+}
+.collage li {
+  flex: var(--r) 1 0;
+  min-width: 0;
+}
+.collage img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 700px) {
+  .collage {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .collage li {
+    flex: calc(var(--r) * 100) 1 calc(var(--r) * 7rem);
+  }
+  .collage::after {
+    content: '';
+    flex-grow: 1000;
+  }
+}
+
+
+/* Prominent link cards under a project's cover */
+.link-cards {
+  list-style: none;
+  margin: 1.75rem 0 2rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  gap: 1rem;
+  max-width: 64rem;
+}
+.link-cards a {
+  display: flex;
+  gap: 1rem;
+  height: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  text-decoration: none;
+  background: var(--paper);
+}
+.link-cards a:hover,
+.link-cards a:focus-visible {
+  background: var(--tint);
+}
+.lc-img {
+  flex: 0 0 9rem;
+  align-self: flex-start;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.lc-img img {
+  display: block;
+  width: 100%;
+  height: 7rem;
+  object-fit: contain;
+}
+.lc-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+.lc-site {
+  font-size: 0.78rem;
+  color: var(--blue-soft);
+}
+.lc-title {
+  font-family: var(--serif, 'Instrument Serif', serif);
+  font-size: 1.35rem;
+  line-height: 1.15;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.lc-note {
+  font-size: 0.85rem;
+  color: var(--blue-soft);
+}
+
+/* Home: the three topic tiles sit under a horizontal rule, set apart from Latest projects */
+.more {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: clamp(1rem, 2vw, 1.5rem);
+  border-top: 1px solid var(--line);
+}
+.more .paths {
+  margin-top: 0;
+}
+
+/* Photo row under the project cover: each heading links to a section further down the page */
+.section-links {
+  margin: 1.5rem 0 2rem;
+}
+.section-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(9rem, 100%), var(--sl-w, 13rem)));
+  gap: var(--gap);
+}
+.section-links .sl-img {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--tint);
+}
+.section-links .sl-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  max-height: none;
+}
+.section-links .sl-label {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.15;
+}
+.prose h2,
+.prose h3 {
+  scroll-margin-top: 1.5rem;
+}
+.section-links .sl-img.contain {
+  background: #fff;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.section-links .sl-img.contain img {
+  object-fit: contain;
+}
+
+/* Spreadsheet preview (AEMET page): the example workbook shown as a sheet, not a download */
+.prose figure.sheet {
+  margin: 1.5rem 0;
+  max-width: 40rem;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.sheet-bar {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--blue-soft);
+  background: var(--tint);
+  border-bottom: 1px solid var(--line);
+}
+.sheet-scroll {
+  overflow-x: auto;
+}
+.prose .sheet table {
+  width: 100%;
+  min-width: 30rem;
+  margin: 0;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.prose .sheet th,
+.prose .sheet td {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--line);
+  font-weight: 400;
+  text-align: left;
+  white-space: nowrap;
+}
+.prose .sheet thead th,
+.prose .sheet tbody th {
+  background: var(--tint);
+  color: var(--blue-soft);
+  text-align: center;
+  font-size: 0.75rem;
+}
+.prose .sheet tbody th {
+  width: 2rem;
+}
+.prose .sheet tr.hdr td {
+  font-weight: 600;
+}
+.sheet-tabs {
+  padding: 0.3rem 0.75rem;
+  background: var(--tint);
+  border-top: 1px solid var(--line);
+  font-size: 0.8rem;
+}
+.sheet-tabs span {
+  display: inline-block;
+  padding: 0.1rem 0.7rem;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.prose figure.sheet figcaption {
+  margin: 0;
+  padding: 0.45rem 0.75rem;
+  border-top: 1px solid var(--line);
+}
+
+/* Code excerpts in project pages */
+.prose pre {
+  max-width: 100%;
+  margin: 1.25rem 0;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  background: var(--tint);
+  border: 1px solid var(--line);
+}
+.prose pre code {
+  font-size: inherit;
+  overflow-wrap: normal;
+  white-space: pre;
+}
+
+/* Cover with a second image beside it */
+.cover-row.has-aside {
+  display: flex;
+  gap: var(--gap);
+  align-items: flex-start;
+  max-width: 64rem;
+  margin: 2rem 0;
+}
+.cover-row.has-aside .project-cover {
+  margin: 0;
+  max-width: none;
+  min-width: 0;
+}
+.cover-row.has-aside .project-cover img,
+.cover-aside img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  margin: 0;
+}
+.cover-aside {
+  margin: 0;
+  min-width: 0;
+}
+.project-cover figcaption,
+.cover-aside figcaption {
+  margin-top: 0.45rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--blue-soft);
+}
+@media (max-width: 700px) {
+  .cover-row.has-aside {
+    flex-direction: column;
+  }
+  .cover-row.has-aside > figure {
+    flex: none !important;
+    width: 100%;
+  }
+}
+
+/* Highlighted pointer inside the text column */
+.prose .callout {
+  max-width: var(--measure);
+  margin: 1.2rem 0;
+  padding: 0.8rem 1rem;
+  background: var(--tint);
+  border-left: 4px solid var(--blue);
+  font-size: 0.95rem;
+}
+
+/* Poster-style image: as wide as the page allows, never cropped by the usual height cap */
+.prose figure.fig.full {
+  clear: both;
+  max-width: 64rem;
+}
+.prose figure.fig.full img,
+.prose.rich figure.fig.full img {
+  width: 100%;
+  max-height: none;
+}
+
+/* Text and a figure side by side, with the figure's bottom edge level with the bottom of the text */
+.prose .align-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+.prose .align-bottom .ab-text {
+  flex: 1 1 22rem;
+  max-width: var(--measure);
+  min-width: 0;
+}
+.prose .align-bottom .ab-text > :first-child {
+  margin-top: 0;
+}
+.prose .align-bottom .ab-text > :last-child {
+  margin-bottom: 0;
+}
+.prose .align-bottom figure.fig {
+  flex: 0 1 auto;
+  margin: 0;
+  max-width: 100%;
+}
+.prose .align-bottom figure.fig img {
+  max-height: 20rem;
+}
+
+/* the caption hangs below the figure so the image itself lines up with the text's bottom edge */
+.prose .align-bottom {
+  margin-bottom: 2.6rem;
+}
+.prose .align-bottom figure.fig {
+  position: relative;
+}
+.prose .align-bottom figure.fig figcaption {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin: 0.4rem 0 0;
+}
+
+/* a screen recording placed inside the text of a project page */
+.prose .video-inline {
+  clear: both;
+  max-width: 62rem;
+  margin: 1.8rem 0;
+}
+.prose .video-inline .doc-open {
+  max-width: none;
+  margin: 0.5rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--blue-soft);
+}
+
+/* pages with `mediaWide: true`: the demo video and "full" figures break out of the text column (up to 62rem) */
+.prose.media-wide .video-inline,
+.prose.media-wide figure.fig.full {
+  width: min(62rem, calc(100vw - 2 * (var(--pad) + clamp(0.4rem, 1.6vw, 1.5rem)) - 1rem));
+  max-width: none;
+}
+
+/* galleryColumns: an even grid, every image the same width, top-aligned, in order */
+.p-gallery.grid {
+  grid-template-columns: repeat(var(--gc, 2), minmax(0, 1fr));
+}
+.p-gallery.grid li,
+.p-gallery.grid li.wide,
+article.compact .p-gallery.grid li.wide {
+  grid-column: auto;
+}
+.p-gallery.grid img,
+.p-gallery.grid li.wide img,
+article.compact .p-gallery.grid img,
+article.compact .p-gallery.grid li.wide img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+}
+@media (max-width: 700px) {
+  .p-gallery.grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* two sections side by side inside the text (wider than the text column): <div class="two-col"><div>…</div><div>…</div></div> */
+.prose .two-col {
+  clear: both;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 2.5rem;
+  align-items: start;
+  width: min(62rem, calc(100vw - 2 * (var(--pad) + clamp(0.4rem, 1.6vw, 1.5rem)) - 1rem));
+  margin: 1.5rem 0;
+}
+.prose .two-col > div {
+  min-width: 0;
+}
+.prose .two-col h3 {
+  margin-top: 0;
+}
+.prose .two-col figure.fig {
+  max-width: 100%;
+}
+@media (max-width: 820px) {
+  .prose .two-col {
+    grid-template-columns: minmax(0, 1fr);
+    width: auto;
+  }
+  .prose .two-col > div + div {
+    margin-top: 1.5rem;
+  }
+}
+
+/* .stack-pair: one image on the left, two stacked on the right; the stacked images together are as tall as the left one.
+   --sh is the left image's height; --sx is the space the first caption and the gap between the two take up. */
+.prose .stack-pair {
+  --sh: 24rem;
+  --sx: 2.125rem;
+  --sw: calc((var(--sh) - var(--sx)) / 0.9722); /* width that makes the two stacked images (aspects 1.691 and 2.626) fill the height */
+  clear: both;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap);
+  margin: 1.5rem 0;
+}
+.prose .stack-pair > figure.fig,
+.prose .stack-pair .stack figure.fig {
+  margin: 0;
+  max-width: none;
+  width: auto;
+}
+.prose .stack-pair > figure.fig img {
+  height: var(--sh);
+  width: auto;
+  max-height: none;
+  max-width: 100%;
+}
+.prose .stack-pair .stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: var(--sw);
+  flex: none;
+}
+.prose .stack-pair .stack figure.fig img {
+  width: var(--sw);
+  height: auto;
+  max-height: none;
+}
+@media (max-width: 820px) {
+  .prose .stack-pair {
+    flex-direction: column;
+  }
+  .prose .stack-pair > figure.fig img,
+  .prose .stack-pair .stack figure.fig img {
+    width: 100%;
+    height: auto;
+  }
+  .prose .stack-pair .stack {
+    width: 100%;
+  }
+}
+
+/* image on the left, text on the right, at the top of a page: <div class="media-left"><div>image</div><div>text</div></div> */
+.prose .media-left {
+  clear: both;
+  display: grid;
+  grid-template-columns: minmax(0, 31rem) minmax(0, 1fr);
+  gap: 0 2.5rem;
+  align-items: start;
+  width: min(62rem, calc(100vw - 2 * (var(--pad) + clamp(0.4rem, 1.6vw, 1.5rem)) - 1rem));
+  margin: 0 0 1.5rem;
+}
+.prose .media-left > div {
+  min-width: 0;
+}
+.prose .media-left img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  margin: 0;
+}
+.prose .media-left > div > :first-child {
+  margin-top: 0;
+}
+@media (max-width: 820px) {
+  .prose .media-left {
+    grid-template-columns: minmax(0, 1fr);
+    width: auto;
+  }
+  .prose .media-left > div + div {
+    margin-top: 1.5rem;
+  }
+}
+
+/* text on the left, a large image on the right: <div class="media-right"><div>text</div><div>image</div></div> */
+.prose .media-right {
+  clear: both;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 32rem);
+  gap: 0 2rem;
+  align-items: start;
+  width: min(62rem, calc(100vw - 2 * (var(--pad) + clamp(0.4rem, 1.6vw, 1.5rem)) - 1rem));
+  margin: 0 0 1.5rem;
+}
+.prose .media-right > div {
+  min-width: 0;
+}
+.prose .media-right > div > :first-child {
+  margin-top: 0;
+}
+.prose .media-right figure.fig {
+  max-width: 100%;
+  margin: 0;
+}
+.prose .media-right figure.fig img {
+  max-height: none;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 820px) {
+  .prose .media-right {
+    grid-template-columns: minmax(0, 1fr);
+    width: auto;
+  }
+  .prose .media-right > div + div {
+    margin-top: 1.5rem;
+  }
+}
+
+/* three items side by side, wider than the text column: <div class="three-col"><div>…</div><div>…</div><div>…</div></div> */
+.prose .three-col {
+  clear: both;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 1rem;
+  align-items: start;
+  width: min(62rem, calc(100vw - 2 * (var(--pad) + clamp(0.4rem, 1.6vw, 1.5rem)) - 1rem));
+  margin: 1.5rem 0;
+}
+.prose .three-col > div {
+  min-width: 0;
+}
+.prose .three-col figure.fig {
+  max-width: 100%;
+  margin: 0;
+}
+.prose .three-col figure.fig img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+}
+@media (max-width: 820px) {
+  .prose .three-col {
+    grid-template-columns: minmax(0, 1fr);
+    width: auto;
+  }
+  .prose .three-col > div + div {
+    margin-top: 1.25rem;
+  }
+}
+
+/* a table wider than the text column: <div class="table-wide">table</div> */
+.prose .table-wide {
+  clear: both;
+  width: min(62rem, calc(100vw - 2 * (var(--pad) + clamp(0.4rem, 1.6vw, 1.5rem)) - 1rem));
+  margin: 1.2rem 0;
+}
+.prose .table-wide table {
+  max-width: none;
+  width: 100%;
+}

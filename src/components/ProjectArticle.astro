@@ -1,0 +1,154 @@
+---
+import { Image } from 'astro:assets';
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  backHref: string;
+  backLabel: string;
+}
+const { project, backHref, backLabel } = Astro.props;
+const d = project.data;
+const { Content } = await render(project);
+---
+
+<a class="back" href={backHref}>{backLabel}</a>
+<article class={d.compact ? 'compact' : undefined}>
+  <header class="page-head">
+    <h1>{d.title}</h1>
+    <p class="lede">{d.summary}</p>
+  </header>
+
+  <dl class="project-meta">
+    <dt>Year</dt>
+    <dd>{d.year}</dd>
+    {d.place && (<><dt>Place</dt><dd>{d.place}</dd></>)}
+    {d.organization && (<><dt>Organization</dt><dd>{d.organization}</dd></>)}
+    {d.role && (<><dt>Role</dt><dd>{d.role}</dd></>)}
+    {d.tools.length > 0 && (<><dt>Tools</dt><dd>{d.tools.join(', ')}</dd></>)}
+    {d.status === 'in-progress' && (<><dt>Status</dt><dd>In progress</dd></>)}
+  </dl>
+
+  {d.placeholder && (
+    d.notice ? (
+      <p class="notice"><strong>{d.placeholder}.</strong> {d.notice}</p>
+    ) : (
+      <p class="notice"><strong>{d.placeholder}.</strong> This is a stand-in until final material is added.</p>
+    )
+  )}
+
+  {d.cover && !d.hideCover && (
+    <div class:list={['cover-row', d.coverAside && 'has-aside']} style={d.coverAside && d.coverWidth ? `max-width:${d.coverWidth}rem` : undefined}>
+      <figure class="project-cover" style={d.coverAside ? `margin-inline:0;flex:${(d.cover.width / d.cover.height).toFixed(3)} 1 0` : `margin-inline:0${d.coverWidth ? `;max-width:${d.coverWidth}rem` : ''}`}>
+        <Image src={d.cover} alt={d.coverAlt} style={d.cover.format === 'gif' && !d.coverAside ? `max-width:${d.cover.width}px` : undefined} widths={[640, 960, 1400]} sizes={d.coverAside ? '(max-width: 820px) 100vw, 36rem' : '(max-width: 820px) 100vw, 52rem'} format="webp" quality={82} />
+        {d.coverCaption && <figcaption>{d.coverCaption}</figcaption>}
+      </figure>
+      {d.coverAside && (
+        <figure class="cover-aside" style={`flex:${((d.coverAside.src.width / d.coverAside.src.height) * (d.coverAside.heightRatio ?? 1)).toFixed(3)} 1 0`}>
+          <Image src={d.coverAside.src} alt={d.coverAside.alt} widths={[480, 720, 1000]} sizes="(max-width: 820px) 100vw, 28rem" format="webp" quality={82} />
+          {d.coverAside.caption && <figcaption>{d.coverAside.caption}</figcaption>}
+        </figure>
+      )}
+    </div>
+  )}
+
+  {d.sectionLinks.length > 0 && (
+    <nav class="section-links" aria-label="Sections of this page" style={d.sectionLinksWidth ? `--sl-w:${d.sectionLinksWidth}rem` : undefined}>
+      <ul>
+        {d.sectionLinks.map((l) => (
+          <li>
+            <a class:list={['sl-img', l.fit === 'contain' && 'contain']} href={l.href} tabindex="-1" aria-hidden="true">
+              <Image src={l.image} alt="" widths={[240, 360, 480]} sizes="(max-width: 700px) 45vw, 12rem" format="webp" quality={80} style={`object-position:${l.focal}`} />
+            </a>
+            <a class="sl-label" href={l.href}>{l.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )}
+
+  {d.linkCards.length > 0 && (
+    <ul class="link-cards">
+      {d.linkCards.map((c) => (
+        <li>
+          <a href={c.href} rel="noopener">
+            <span class="lc-img"><Image src={c.image} alt={c.alt} widths={[320, 480, 640]} sizes="(max-width: 700px) 40vw, 14rem" format="webp" quality={80} /></span>
+            <span class="lc-text">
+              <span class="lc-site">{c.site}</span>
+              <span class="lc-title">{c.title}</span>
+              {c.note && <span class="lc-note">{c.note}</span>}
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  )}
+
+  <div class:list={['prose', { rich: d.rich, 'media-wide': d.mediaWide }]} style={d.textWidth ? `max-width:${d.textWidth}rem` : undefined}>
+    <Content />
+  </div>
+
+  {d.videos.map((v) => (
+    <section class="doc-embed video-embed" style={`max-width:${v.maxRem}rem`} aria-label={v.label ?? 'Screen recording'}>
+      {v.label && (
+        <div class="prose">
+          <h2>{v.label}</h2>
+        </div>
+      )}
+      <video controls muted loop playsinline preload="metadata" poster={v.poster} aria-label={v.alt} style={`aspect-ratio:${v.ratio}`}>
+        <source src={v.src} type="video/mp4" />
+        <p>This browser can't play the video. <a href={v.src}>Download the MP4</a>.</p>
+      </video>
+      {v.caption && <p class="doc-open">{v.caption}</p>}
+    </section>
+  ))}
+
+  {d.gallery.length > 0 && d.galleryHeading && (
+    <div class="prose gallery-heading"><h2>{d.galleryHeading}</h2></div>
+  )}
+  {d.gallery.length > 0 && (
+    <section class="p-gallery-wrap" aria-label="Images">
+      <ul class:list={['p-gallery', { even: d.galleryHeight, grid: d.galleryColumns }]} style={[d.galleryHeight ? `--gh:${d.galleryHeight}rem` : '', d.galleryColumns ? `--gc:${d.galleryColumns}` : ''].filter(Boolean).join(';') || undefined}>
+        {d.gallery.map((g) => (
+          <li class={g.wide ? 'wide' : undefined}>
+            <figure>
+              {g.src.format === 'gif' ? (
+                <img src={g.src.src} alt={g.alt} width={g.src.width} height={g.src.height} loading="lazy" decoding="async" />
+              ) : (
+                <Image src={g.src} alt={g.alt} widths={g.wide ? [720, 1000, 1400] : [320, 480, 720, 1000]} sizes={g.wide ? "(max-width: 1400px) 100vw, 1330px" : "(max-width: 560px) 100vw, (max-width: 1000px) 50vw, 25vw"} format="webp" quality={80} />
+              )}
+              {g.caption && <figcaption>{g.caption}</figcaption>}
+            </figure>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {d.embeds.map((e) => (
+    <section class="doc-embed" style={`--ratio:${e.ratio};max-width:${e.maxRem}rem`} aria-label={e.label}>
+      <div class="prose">
+        <h2>{e.label}</h2>
+        {e.intro && <p>{e.intro}</p>}
+      </div>
+      {e.kind === 'html' ? (
+        <iframe src={e.src} title={e.label} loading="lazy"></iframe>
+      ) : (
+        <object data={`${e.viewSrc ?? e.src}#view=FitH&toolbar=0&navpanes=0`} type="application/pdf" aria-label={`${e.label} (PDF)`}>
+          <p>
+            This browser can't show PDFs inline. <a href={e.src}>Open the PDF</a>.
+          </p>
+        </object>
+      )}
+      <p class="doc-open"><a href={e.src}>{e.openLabel ?? (e.kind === 'html' ? 'Open in a new tab' : 'Open the PDF in a new tab')}</a></p>
+    </section>
+  ))}
+
+  {d.links.length > 0 && (
+    <div class="prose">
+      <h2>{d.linksHeading}</h2>
+      <ul>{d.links.map((l) => (<li><a href={l.href} rel="noopener">{l.label}</a></li>))}</ul>
+    </div>
+  )}
+</article>

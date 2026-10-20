@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import { profile, nav } from '../data/profile';
+import faceIcon from '../assets/profile/face-icon.png';
+
+interface Props {
+  current: string;
+}
+const { current } = Astro.props;
+const isCurrent = (href: string) =>
+  current.startsWith(href);
+---
+
+<header class="site-header">
+  <a class="mark" href="/" aria-label={`${profile.name}, home`}><Image src={faceIcon} alt="" width={24} height={24} densities={[2, 3]} class="face" />
+    <span>{profile.tagline}</span>
+  </a>
+  <nav aria-label="Primary">
+    <ul>
+      {
+        nav.map((item) => (
+          <li>
+            <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <div class="contact">
+    <ul>
+      <li><a class="primary" href={`mailto:${profile.email}`}>Email</a></li>
+      {profile.links.map((l) => <li><a href={l.href} rel="me noopener">{l.label}</a></li>)}
+    </ul>
+  </div>
+</header>

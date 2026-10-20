@@ -1,0 +1,17 @@
+{
+  "_readme": "Each entry turns one original file into a web-ready image under src/assets/. 'src' is the original's file name (looked up in the folder you pass with --src). 'ops' are optional: crop [left, top, right, bottom] in original pixels, frame (GIF frame number), video_t (seconds into a video), scale (upscale factor), max (longest edge in px).",
+  "images": [
+    { "out": "profile/madeline.jpg", "src": "headshot.png", "ops": { "crop": [250, 90, 880, 720], "max": 900 } },
+    { "out": "projects/embl-laser-injection/lead.jpg", "src": "embl_dataray.gif", "ops": { "frame": 20, "scale": 2 } },
+    { "out": "projects/sift-ms-co2-reduction/lead.jpg", "src": "image.png", "ops": {} },
+    { "out": "projects/rocketry-payload/lead.jpg", "src": "rocketry-finished-payload.jpg", "ops": { "max": 1800 } },
+    { "out": "projects/rocketry-payload/launch.jpg", "src": "rocketry-launch.jpg", "ops": { "max": 1800 } },
+    { "out": "projects/no3r-electrocatalysis/lead.jpg", "src": "NO3R_journalcover.JPG", "ops": { "max": 2000 } },
+    { "out": "projects/isochrone-accessibility/lead.jpg", "src": "d6635262-image.png", "ops": {} },
+    { "out": "projects/galicia-water-map/lead.jpg", "src": "e15f8285-image.png", "ops": {} },
+    { "out": "projects/aemet-climate-app/lead.jpg", "src": "83277e48-image.gif", "ops": { "frame": 12, "crop": [0, 0, 1919, 940] } },
+    { "out": "projects/ball-and-beam/lead.jpg", "src": "controls_ballbeam.MOV", "ops": { "video_t": 6 } },
+    { "out": "projects/pedagobot-microcontrollers/lead.jpg", "src": "microcontroller_closeup.HEIC", "ops": { "max": 1800 } },
+    { "out": "projects/swimstinct/lead.jpg", "src": "swimstinct_video.mov", "ops": { "video_t": 5 } }
+  ]
+}

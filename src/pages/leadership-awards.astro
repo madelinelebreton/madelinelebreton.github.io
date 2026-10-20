@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import EntryList from '../components/EntryList.astro';
+import Lightbox from '../components/Lightbox.astro';
+import { awards } from '../data/awards';
+
+const entries = (await getCollection('leadership', (e) => !e.data.draft)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<Base
+  title="Leadership & Awards"
+  description="Volunteering, mentorship and recognition from engineering, athletics and community involvement."
+>
+  <header class="page-head">
+    <h1>Leadership &amp; Awards</h1>
+  </header>
+
+  <section class="awards" aria-label="Scholarships and awards">
+    <ul>
+      {
+        awards.map((a) => (
+          <li>
+            <span class="a-name">{a.name}</span>
+            <span class="a-meta">{[a.by, a.date].filter(Boolean).join(', ')}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <EntryList entries={entries} />
+  <Lightbox />
+</Base>
