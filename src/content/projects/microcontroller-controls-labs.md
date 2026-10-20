@@ -7,11 +7,7 @@ organization: Mechatronics Engineering
 order: 9
 cover: ../../assets/projects/microcontroller-controls-labs/ball-and-beam.gif
 coverAlt: Animation of a ball-and-beam rig on a lab bench next to a laptop plotting the response live as the ball is balanced.
-coverWidth: 49
-coverAside:
-  src: ../../assets/projects/microcontroller-controls-labs/breadboard-running.gif
-  alt: "Animation of the breadboard circuit running, with LEDs lighting in turn."
-  caption: The circuit running.
+coverWidth: 22
 tools: [C, PIC16F887, MPLAB, Multisim]
 gallery:
   - src: ../../assets/projects/microcontroller-controls-labs/microcontroller-boards.jpg

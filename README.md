@@ -352,3 +352,5 @@ Same as a leadership entry: one Markdown file in `src/content/exploring/` plus p
 - Isochrone, AEMET and Galicia water map pages: new GIFs made from the final presentation slides (isochrone rings, travel modes, and ice cream, beaches and tourist attractions as separate GIFs; AEMET stations and charts; the Kumu map process)
 - Amenities GIF split into three; AEMET stations GIF cropped tight
 - Galicia water map page: enlarged the sticky-note, loop, import, result and theme images, widened the themes table, shrank the Orff diagram, and replaced the process GIF with the literature review collage
+- Media page: restored the original image size (an earlier layout edit had enlarged the news images by accident)
+- Microcontroller page: removed the "The circuit running." animation beside the top GIF
