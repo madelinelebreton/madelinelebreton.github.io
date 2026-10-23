@@ -358,3 +358,4 @@ Same as a leadership entry: one Markdown file in `src/content/exploring/` plus p
 - Microcontroller page: the four lab photos are now a header collage under the cover, the "Controls lab" text is removed, and the PIC16F887 photo lines up with the PedagoBot column
 - EMBL page: the four photos under the intro are now two larger rows (setup + prototype at 13rem tall, whiteboard + beam profile at 14rem tall) instead of one 7rem-tall row
 - AEMET page: the Galicia station map is now its own image beside the GIF, which keeps only the website and API maps; both sit in one 22rem-tall row
+- Galicia water map page: intro rewritten (audiences, layers, explore rather than read, Kumu Project of the Week); Pablo paragraph attributes "water death" to him; Choosing Kumu cut to two reasons and the "Exploring what Kumu can do" feature tour removed; themes table softened (governance row, groundwater withdrawals, privatization linked by "some sources")
