@@ -57,7 +57,8 @@ The pipeline diagram below shows the same flow, from a municipality list to the 
 
 ![Flowchart: municipality list (.xlsx), geocode with OpenStreetMap, nearest station with sf::st_nearest_feature, fetch monthly data from the AEMET OpenData API, reshape to long, wide or matrix form, then Excel and CSV export.](../../assets/projects/aemet-climate-app/pipeline.jpg "wide: The data pipeline, from a municipality list to Excel and CSV export.")
 
-![Maps of AEMET weather stations: first the stations listed on the AEMET website across Spain, then the many more available through the API, then the stations in Galicia.](../../assets/projects/aemet-climate-app/aemet-stations.gif "w30: AEMET station locations: the stations on the website, the far larger set in the API, and those in Galicia.")
+![Maps of AEMET weather stations in Spain: first the stations listed on the AEMET website, then the many more available through the API.](../../assets/projects/aemet-climate-app/aemet-stations.gif "even22: AEMET station locations: the stations on the website, and the far larger set in the API.")
+![Map of the AEMET API stations in Galicia, each labelled with its station code.](../../assets/projects/aemet-climate-app/aemet-stations-galicia.png "The AEMET API stations in Galicia.")
 
 ## Output workbook
 

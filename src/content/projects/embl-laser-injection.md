@@ -49,10 +49,11 @@ plate: '#ffffff'
 ---
 Project during my internship at the European Molecular Biology Laboratory's Instrumentation Team, which develops scientific instrumentation for synchrotron beamlines and cryo-electron microscopy.
 
-![Me wearing laser safety glasses, seated beside the laser injection setup in its black enclosure on an optical bench.](../../assets/projects/embl-laser-injection/lab-bench.jpg "even7: At the laser injection setup.")
+![Me wearing laser safety glasses, seated beside the laser injection setup in its black enclosure on an optical bench.](../../assets/projects/embl-laser-injection/lab-bench.jpg "even13: At the laser injection setup.")
 ![The motorized laser injection prototype on an optical bench, with a red laser beam, a fibre and a gimbal.](../../assets/projects/embl-laser-injection/laser-bench.jpg "Prototype on the optical bench.")
-![Whiteboard notes with formulas for spot size and the geometry of the fibre and collimators.](../../assets/projects/embl-laser-injection/whiteboard-optics.jpg "even7: Optics sketches")
-![Screen recording of beam profiler software showing a laser spot and its intensity profile.](../../assets/projects/embl-laser-injection/dataray-beam-profile.gif "even7: Focusing the laser profile")
+
+![Whiteboard notes with formulas for spot size and the geometry of the fibre and collimators.](../../assets/projects/embl-laser-injection/whiteboard-optics.jpg "even14: Optics sketches")
+![Screen recording of beam profiler software showing a laser spot and its intensity profile.](../../assets/projects/embl-laser-injection/dataray-beam-profile.gif "Focusing the laser profile")
 
 I helped develop a motorized, wide-wavelength-range laser injection system for time-resolved macromolecular X-ray crystallography at the synchrotron, a collaboration between the European Synchrotron Radiation Facility and the EMBL. Light from lasers at several wavelengths is carried by optical fibre to a collimator and focused onto the sample by an objective, steered by a motorized gimbal. The optical design draws on photonics and precision instrumentation, which I learned during this work term.
 

@@ -356,3 +356,5 @@ Same as a leadership entry: one Markdown file in `src/content/exploring/` plus p
 - Microcontroller page: removed the "The circuit running." animation beside the top GIF
 - Microcontroller page: restored the breadboard animation beside the top GIF, without its caption
 - Microcontroller page: the four lab photos are now a header collage under the cover, the "Controls lab" text is removed, and the PIC16F887 photo lines up with the PedagoBot column
+- EMBL page: the four photos under the intro are now two larger rows (setup + prototype at 13rem tall, whiteboard + beam profile at 14rem tall) instead of one 7rem-tall row
+- AEMET page: the Galicia station map is now its own image beside the GIF, which keeps only the website and API maps; both sit in one 22rem-tall row
