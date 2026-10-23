@@ -36,7 +36,7 @@ tags: [data]
 
 <div>
 
-A systems map of the water cycle in Galicia, built in Kumu with Pablo Gallego Picard at Fundación RIA. It shows how human activity and the water cycle affect each other, so that scientists, architects, engineers, planners and community members can see the connections at a glance and discuss them across disciplines. Kumu featured it as a Project of the Week.
+A systems map of the water cycle in Galicia, built in Kumu at Fundación RIA with Pablo Gallego Picard of Universidade da Coruña. It shows how human activity and the water cycle affect each other, so that scientists, architects, engineers, planners and community members can see the connections at a glance and discuss them across disciplines. Kumu featured it as a Project of the Week.
 
 The natural water cycle is the foundation of the map, with human activity layered around it: feedback loops, findings from a literature review, the cultural significance of water and possible next steps for research and intervention. The map is meant to be explored rather than read from start to finish, by following the connections, spotting the feedback loops and seeing how a decision in one place affects outcomes elsewhere.
 
@@ -45,6 +45,11 @@ Open the interactive version to explore each element and connection. The animati
 ## Purpose
 
 The literature review showed how connected the problems in Galicia's hydrologic cycle are. I wanted to represent that visually, so that someone could see the interdependencies and relationships at a glance instead of reading them in a report.
+
+### Sources
+
+- [The Environment in Galicia: A Book of Images](https://doi.org/10.1007/978-3-031-33114-5), by Avelino Núñez-Delgado, Esperanza Álvarez-Rodríguez and David Fernández-Calviño (Springer). Photographs by the researchers and professors who contributed to it, describing Galicia's atmosphere, geology, water, soils, landscapes and environmental issues.
+- [AEMET climate atlas viewer](https://agroclimap.aemet.es/). An interactive map viewer for Spain's climate atlas, where layers can be queried at a point or summarised for an area such as a municipality or province.
 
 </div>
 
