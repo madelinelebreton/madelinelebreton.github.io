@@ -1,10 +1,10 @@
 ---
 title: The water cycle in Galicia systems mapping
-summary: "A systems map of the water cycle in Galicia, built from a literature review to facilitate conversations with stakeholders about how human activity and the hydrologic cycle affect each other. Featured as the Kumu Systems Project of the Week."
+summary: "A Kumu systems map of the water cycle in Galicia, built from a literature review to facilitate conversations with stakeholders about how human activity and the hydrologic cycle affect each other."
 year: "2026"
 place: Santiago de Compostela, Spain
 organization: Fundación RIA
-order: 4
+order: 8
 cover: ../../assets/projects/galicia-water-map/map-build.gif
 coverAlt: "Animated systems map: the green and blue water cycle loop on its own, then with climate change, land use, marine impact, estuary farming, dam management and water use added around it, then with the cultural importance cluster and a pop-up description."
 tools: [Kumu, Sticky Studio, Excel]
@@ -24,9 +24,6 @@ linkCards:
     site: Kumu on LinkedIn
     note: Kumu features the map in its Project of the Week series.
 tags: [data]
-group: "spatial"
-latest: 7
-outcome: "A Kumu systems map built from a literature review; featured as Kumu's Project of the Week."
 ---
 
 <div class="media-left">
@@ -39,17 +36,20 @@ outcome: "A Kumu systems map built from a literature review; featured as Kumu's 
 
 <div>
 
-This is a systems map of the water cycle in Galicia, built in Kumu with Pablo Gallego Picard at Fundación RIA. It shows how human activity and the water cycle affect each other, so that people can see the connections at a glance and discuss them. Kumu featured it as a Project of the Week. The map was used to support conversations with stakeholders and decision making for exhibition planning. Open the interactive version to explore each element and connection. The animation above builds the map up in steps: the water cycle loop first, then the human-activity themes around it, with the cultural importance cluster and pop-up descriptions in the interactive version.
+A systems map of the water cycle in Galicia, built in Kumu at Fundación RIA with Pablo Gallego Picard of Universidade da Coruña. It shows how human activity and the water cycle affect each other, so that scientists, architects, engineers, planners and community members can see the connections at a glance and discuss them across disciplines. Kumu featured it as a Project of the Week.
+
+The natural water cycle is the foundation of the map, with human activity layered around it: feedback loops, findings from a literature review, the cultural significance of water and possible next steps for research and intervention. The map is meant to be explored rather than read from start to finish, by following the connections, spotting the feedback loops and seeing how a decision in one place affects outcomes elsewhere.
+
+Open the interactive version to explore each element and connection. The animation above builds the map up in steps, and this page follows how it was made, from a literature review to a finished diagram.
 
 ## Purpose
 
 The literature review showed how connected the problems in Galicia's hydrologic cycle are. I wanted to represent that visually, so that someone could see the interdependencies and relationships at a glance instead of reading them in a report.
 
-## Sources
+### Sources
 
-- MAPAMA, the Spanish Ministry of Agriculture and Environment.
-- [AEMET agroclimatic maps](https://agroclimap.aemet.es/), the Spanish meteorological agency's agroclimatic viewer.
-
+- [The Environment in Galicia: A Book of Images](https://doi.org/10.1007/978-3-031-33114-5), by Avelino Núñez-Delgado, Esperanza Álvarez-Rodríguez and David Fernández-Calviño (Springer). Photographs by the researchers and professors who contributed to it, describing Galicia's atmosphere, geology, water, soils, landscapes and environmental issues.
+- [AEMET climate atlas viewer](https://agroclimap.aemet.es/). An interactive map viewer for Spain's climate atlas, where layers can be queried at a point or summarised for an area such as a municipality or province.
 
 </div>
 
@@ -98,7 +98,7 @@ Next I tried different ways of laying out the connections between the themes to 
 
 ## Identifying gaps with Pablo Gallego Picard
 
-A coffee chat with Pablo showed gaps that a literature review could not fill. He told me that water quality matters a great deal in Galicia and that runoff from cattle and agriculture carries nitrogen. He described dams and the privatization of public land as a cause of what he called "water death". He pointed me to cultural references, including the campano, the traditions of cleaning canals and the temple in Lugo, and said the map should show how small projects can have large effects, because people need to be given hope. As a result I added two themes: cultural and traditional water knowledge, and governance fragmentation.
+A coffee chat with Pablo showed gaps that a literature review could not fill. He told me that water quality matters a great deal in Galicia and that runoff from cattle and agriculture carries nitrogen. He described dams and the privatization of public land as a cause of what he called “water death”. He pointed me to cultural references, including the campano, the traditions of cleaning canals and the temple in Lugo, and said the map should show how small projects can have large effects, because people need to be given hope. As a result I added two themes: cultural and traditional water knowledge, and governance fragmentation.
 
 ## Inspiration for the representation
 
@@ -126,7 +126,7 @@ I began mapping the human effects on Galicia's hydrologic cycle by hand: causes,
 
 ## Choosing Kumu
 
-I chose Kumu because its presentation mode can walk through each feedback loop, and because it imports from a spreadsheet. I keep the elements and connections in one spreadsheet with a sheet per theme, so I can add to it and re-import to rebuild the map.
+I chose Kumu because its presentation mode can walk through each feedback loop, and because it imports from a spreadsheet, which makes the map easy to extend and rebuild.
 
 ## Systems practice
 
@@ -189,7 +189,7 @@ I built the final map in layers. The green and blue water cycles form the main l
 
 ## The themes in detail
 
-Each theme is described by what causes it upstream and what it leads to downstream, at three levels: structural (physical and infrastructure conditions), attitudinal (beliefs and values) and transactional (decisions and actions). The table gives a few examples for each. Each row summarises what the literature and my conversation with Pablo describe.
+Each theme is described by what causes it upstream and what it leads to downstream, at three levels: structural (physical and infrastructure conditions), attitudinal (beliefs and values) and transactional (decisions and actions). Each row summarises what the literature and my conversation with Pablo describe.
 
 <div class="table-wide">
 
@@ -201,7 +201,7 @@ Each theme is described by what causes it upstream and what it leads to downstre
 | Freshwater resources | Contaminated runoff from agroforestry, extreme precipitation, factory pollutants, reservoir dependence, population growth and tourism demand | More groundwater withdrawals, less freshwater available, water quality degradation | Overextraction and depletion of aquifers, unauthorized groundwater withdrawals, higher water treatment costs |
 | Estuarine systems (rías) | River inflows, coastal geography, aquaculture infrastructure, global warming; market and cultural demand for shellfish | Salinity changes, contamination, nutrient loading, algal blooms, warmer water | Shellfish mortality, lower yields on the bateas, species shifts, loss of cultural traditions |
 | Marine systems | Fishing fleets, harvesting pressure, wastewater treatment facilities, climate change | Food web disruption, habitat disturbance, ocean warming, acidification and hypoxia | Endangered species, loss of marine biodiversity, declining fish stocks, loss of seagrass as a carbon sink |
-| Governance fragmentation | Authority split between two basin bodies, multi-level jurisdiction, coordination across institutions | Authority over water is split between two basin bodies and several levels of government. The map shows how responsibilities are coordinated and where gaps appear. | Sources describe enforcement gaps, conflicting land decisions, stalled restoration and contested permits as effects of split authority |
-| Cultural and traditional water knowledge | Rural repopulation, living commons institutions, local ecological knowledge, cultural food identity | Stewardship of the water system, with shared values and responsibilities | Landscape stewardship, but also knowledge loss; some sources link the erosion of commons to the privatization of managed land |
+| Governance fragmentation | Authority split between two basin bodies and several levels of government; coordination across institutions | Responsibilities for water are shared across institutions; the map shows how they are coordinated and where gaps appear | Some sources associate split authority with enforcement gaps, conflicting land decisions, stalled restoration and contested permits |
+| Cultural and traditional water knowledge | Rural repopulation, living commons institutions, local ecological knowledge, cultural food identity | Stewardship of the water system, with shared values and responsibilities | Landscape stewardship, but also knowledge loss; some sources link the privatization of managed land to the erosion of commons |
 
 </div>

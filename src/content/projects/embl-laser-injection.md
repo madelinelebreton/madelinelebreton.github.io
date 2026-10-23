@@ -62,10 +62,11 @@ I built a theoretical model of the system's transmission rate and laser spot siz
 
 During the summer of 2025 I worked in the Instrumentation Team at the European Molecular Biology Laboratory in Grenoble, which builds scientific instruments for synchrotron beamlines and cryo-electron microscopy. My project was a laser injection system for time-resolved X-ray crystallography at the synchrotron. This method is used to determine the 3D atomic and molecular structures of crystalline substances.
 
-![Me wearing laser safety glasses, seated beside the laser injection setup in its black enclosure on an optical bench.](../../assets/projects/embl-laser-injection/lab-bench.jpg "even7: At the laser injection setup.")
+![Me wearing laser safety glasses, seated beside the laser injection setup in its black enclosure on an optical bench.](../../assets/projects/embl-laser-injection/lab-bench.jpg "even13: At the laser injection setup.")
 ![The motorized laser injection prototype on an optical bench, with a red laser beam, a fibre and a gimbal.](../../assets/projects/embl-laser-injection/laser-bench.jpg "Prototype on the optical bench.")
-![Whiteboard notes with formulas for spot size and the geometry of the fibre and collimators.](../../assets/projects/embl-laser-injection/whiteboard-optics.jpg "even7: Optics sketches")
-![Screen recording of beam profiler software showing a laser spot and its intensity profile.](../../assets/projects/embl-laser-injection/dataray-beam-profile.gif "even7: Focusing the laser profile")
+
+![Whiteboard notes with formulas for spot size and the geometry of the fibre and collimators.](../../assets/projects/embl-laser-injection/whiteboard-optics.jpg "even14: Optics sketches")
+![Screen recording of beam profiler software showing a laser spot and its intensity profile.](../../assets/projects/embl-laser-injection/dataray-beam-profile.gif "Focusing the laser profile")
 
 The team had a prototype; lasers of several wavelengths send light along an optical fibre to a collimator, and an objective focuses it on the sample, steered by a motorized gimbal. My job was to measure how well it worked and optimize the design, drawing on photonics and precision instrumentation concepts.
 
