@@ -16,6 +16,10 @@ const projects = defineCollection({
       place: z.string().optional(), // city / lab / campus
       organization: z.string().optional(),
       section: z.enum(['work', 'explore']).default('work'),
+      group: z.enum(['research', 'robotics', 'spatial', 'design']).optional(), // Work page heading the card sits under
+      subtitle: z.string().optional(), // formal title shown under the h1
+      facts: z.array(z.object({ label: z.string(), value: z.string() })).optional(), // replaces the default field list
+      outcome: z.string().optional(), // one-line outcome shown under the card title on the Work page
       role: z.string().optional(),
       order: z.number(), // lower = earlier in the grid
       latest: z.number().optional(), // pin to the home page "Latest projects" row; lower = further left
@@ -65,7 +69,7 @@ const projects = defineCollection({
       sectionLinks: z
         .array(z.object({ label: z.string(), href: z.string(), image: image(), focal: z.string().default('center'), fit: z.enum(['cover', 'contain']).default('cover') }))
         .default([]),
-      links: z.array(z.object({ label: z.string(), href: z.string().url() })).default([]),
+      links: z.array(z.object({ label: z.string(), href: z.string().url(), note: z.string().optional() })).default([]),
       // Flags shown in the build preview and listed in README until resolved
       placeholder: z.string().optional(), // e.g. "Temporary image"
       notice: z.string().optional(), // replaces the default stand-in sentence on the project page
@@ -139,6 +143,7 @@ const news = defineCollection({
       blurb: z.string().optional(), // one line shown under the headline
       href: z.string().url(),
       kind: z.enum(['article', 'video']).default('article'),
+      group: z.enum(['research', 'athletics']).default('research'), // which Media heading the item sits under
       image: image(),
       alt: z.string(),
       focal: z.string().default('center'),

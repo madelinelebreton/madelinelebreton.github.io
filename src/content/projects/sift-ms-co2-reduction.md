@@ -1,13 +1,22 @@
 ---
 title: Real-time SIFT-MS for CO₂ reduction products
-summary: Using selected-ion flow-tube mass spectrometry to measure the products of electrochemical CO₂ reduction in real time.
+summary: "A method that measures ten reaction products about every two seconds. It contributed to a paper in ACS Analytical Chemistry."
 year: "2024"
 place: Advanced Materials Research Facility
 organization: National Research Council Canada
-role: Research assistant (Funded by NSERC Undergraduate Student Research Award)
+role: Research assistant, funded by an NSERC Undergraduate Student Research Award
+facts:
+  - label: Dates
+    value: "April to August 2024."
+  - label: Place
+    value: "National Research Council of Canada, Advanced Materials Research Facility, Mississauga."
+  - label: Role
+    value: "Research assistant, funded by an NSERC Undergraduate Student Research Award."
+  - label: Tools
+    value: "SIFT-MS (selected-ion flow-tube mass spectrometer), Autodesk Inventor, Blender, Excel, EndNote."
 tileRatio: 1.6
-order: 6
-latest: 4
+order: 2
+latest: 3
 cover: ../../assets/projects/sift-ms-co2-reduction/lead.jpg
 coverAlt: Exploded diagram of the two-compartment flow cell with platinum counter electrode, membrane, Ag/AgCl reference electrode and copper working electrode.
 gallery:
@@ -40,16 +49,19 @@ links:
     href: https://www.eng.mcmaster.ca/chemeng/news/a-catalyst-for-change-mcmaster-researchers-discover-a-low-cost-path-to-carbon-conversion/
   - label: "Paper: SIFT-MS for real-time quantitative measurement of electrochemical CO₂ reduction products (ACS Analytical Chemistry, October 2025)"
     href: https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c04792
+    note: "Author. I helped develop the real-time quantification method and ran flow cell experiments and data analysis."
 tags: [instrumentation]
 compact: true
 galleryHeight: 12
-tools: [Selective Ion Flow Tube Mass Spectrometer, Autodesk Inventor, Blender, Excel, EndNote]
+tools: [Selected-Ion Flow-Tube Mass Spectrometer (SIFT-MS), Autodesk Inventor, Blender, Excel, EndNote]
 fit: contain
 plate: '#ffffff'
+group: "research"
+outcome: "Developing a method for measuring 10 reaction products every 2 seconds, contributed to a paper in ACS Analytical Chemistry."
 ---
-Research term at the National Research Council's Advanced Materials Research Facility, May to August 2024, in Mississauga, funded by an NSERC Undergraduate Student Research Award. I developed a methodology for evaluating the real-time catalytic performance of copper nanoparticles for electrochemical CO₂ reduction with a selected ion flow tube mass spectrometer (SIFT-MS), and ran a case study on 25 nm copper nanoparticle catalysts to verify it in a flow cell.
+Summer 2024 I worked at the NRC's Advanced Materials Research Facility, funded by an NSERC Undergraduate Student Research Award. I helped develop a method to quantify the products of electrochemical CO₂ reduction in real time with a selected-ion flow-tube mass spectrometer (SIFT-MS). To test it, I ran 25 nm copper nanoparticle catalysts in a flow cell. The instrument read ten products, seven liquid and three gaseous, about every two seconds at four applied potentials.
 
-Conventional product analysis (NMR, HPLC, gas chromatography) takes days to judge one catalyst and cannot show how a catalyst changes over time. SIFT-MS can quantify products in seconds, which could speed up catalyst discovery for converting CO₂ into useful chemicals and fuels, in line with the Paris Agreement targets.
+NMR, HPLC and gas chromatography can't show how a catalyst changes over time, and they take hours to days to judge one catalyst. SIFT-MS reads products within seconds, so a catalyst can be watched while it runs. This would be useful in the search for catalysts that turn CO₂ into useful chemicals and fuels.
 
 ## Cell design
 
@@ -68,7 +80,7 @@ Conventional product analysis (NMR, HPLC, gas chromatography) takes days to judg
 
 ## Data analysis
 
-I processed over 10,000 real-time data points across ten products and four applied potentials, and improved the Excel-based automation that converts signals into concentrations, production rates, Faradaic efficiencies and partial current densities. Several products give overlapping signals, so I used deconvolution formulae in Excel, built on calibration runs with known concentrations. In the final report, ethene reached a partial current density approaching 100 mA/cm² at the most negative potential tested.
+I processed over 10,000 real-time data points across ten products and four applied potentials, and improved the Excel workbook scripts that deconvolute signals into concentrations, production rates, Faradaic efficiencies and partial current densities. Several products give overlapping signals, so I used deconvolution formulae in Excel, built on calibration runs with known concentrations. In the final report, ethene reached a partial current density approaching 100 mA/cm² at the most negative potential tested.
 
 ![SIFT-MS time series of analyte concentrations in ppm for ten products, with a table of slope values and a mixture calibration curve of concentration against ppm](../../assets/projects/sift-ms-co2-reduction/sift-time-series.jpg "even12: SIFT-MS signal for the ten products over time, with the slope table and calibration curve used to convert ppm into concentration.")
 ![Spreadsheet titled SIFT data analysis, with columns of deconvolved concentrations, Faradaic efficiency and partial current density for each product](../../assets/projects/sift-ms-co2-reduction/excel-analysis.jpg "even12: The Excel workbook that converts the signals into concentrations, Faradaic efficiencies and partial current densities.")

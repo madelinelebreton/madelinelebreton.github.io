@@ -2,7 +2,7 @@
 title: "Magpie"
 titleSuffix: "Payload"
 outlet: "McMaster Rocketry"
-blurb: "McMaster Rocketry's first scientific payload: an SRAD fracture-test module that flew on Osiris to characterize how epoxy test samples fracture under real flight loads, groundwork for a self-healing polymer payload."
+blurb: "McMaster Rocketry's first scientific payload: a fracture-test module designed and built by students that flew on Osiris to measure how epoxy test samples fracture under real flight loads, as groundwork for a self-healing polymer payload."
 date: 2026-01-01
 dateLabel: "2026"
 href: https://macrocketry.ca/payloads/magpie/

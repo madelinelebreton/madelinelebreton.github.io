@@ -28,6 +28,6 @@ images:
     focal: "50% 35%"
 ---
 
-Exchange student at Université Grenoble Alpes, studying technical subjects in French.
+Exchange student at Université Grenoble Alpes, January to April 2025, studying technical subjects in French, including embedded systems design and gender studies.
 
 Connected with exchange students from around the world, and engaged with the history and culture of France.

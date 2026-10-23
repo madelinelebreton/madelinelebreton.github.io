@@ -1,17 +1,26 @@
 ---
 title: Laser injection system for synchrotron crystallography
-summary: Characterizing and optimizing a prototype laser injection system at the European Photon and Neutron Science Campus in Grenoble, France.
+summary: "I mapped the optics of a motorized laser injection system and fixed a misalignment in its design."
 year: "2025"
 place: European Photon and Neutron Science Campus, Grenoble, France
 organization: EMBL Instrumentation Team
 role: Characterization and optimization of an existing prototype
-order: 2
+facts:
+  - label: Dates
+    value: "April to August 2025."
+  - label: Place
+    value: "EMBL Grenoble, on the European Photon and Neutron (EPN) Science Campus."
+  - label: Role
+    value: "Technical trainee, Instrumentation Team."
+  - label: Tools
+    value: "Python, Standa motorized gimbal, DataRay beam profiler, Thorlabs power meter, OXXIUS lasers."
+order: 1
 latest: 2
 cover: ../../assets/projects/embl-laser-injection/optical-setup.jpg
 coverAlt: "Optical layout of the laser injection system: injecting collimator, optical fiber, projecting collimator, motorized gimbal, objective, cameras and detector."
 focal: center
 coverCaption: My characterization of the gimbal-controlled optical system
-tools: [Python, Java, XILabs gimbal, DataRay beam profiler, Thorlabs power meter, OXXIUS lasers]
+tools: [Python, Standa motorized gimbal, DataRay beam profiler, Thorlabs power meter, OXXIUS lasers]
 gallery:
   - src: ../../assets/projects/embl-laser-injection/lead.jpg
     alt: "Two sets of beam-spot images from the laser tests, one at 405 nm and one at 450 nm, each showing the spot at the centre and at four corner positions"
@@ -46,15 +55,19 @@ tags: [instrumentation]
 compact: true
 fit: contain
 plate: '#ffffff'
+group: "research"
+outcome: "Characterized a motorized gimbal; my analysis led to a redesign of the prototype."
 ---
-Project during my internship at the European Molecular Biology Laboratory's Instrumentation Team, which develops scientific instrumentation for synchrotron beamlines and cryo-electron microscopy.
+I built a theoretical model of the system's transmission rate and laser spot size. My automated characterization scans showed that the gimbal repeats a position to about ±6 µm and crosses its full focused range in 1.3 s at maximum speed. After the mechanical redesign, the prototype was fully functional across its range.
+
+During the summer of 2025 I worked in the Instrumentation Team at the European Molecular Biology Laboratory in Grenoble, which builds scientific instruments for synchrotron beamlines and cryo-electron microscopy. My project was a laser injection system for time-resolved X-ray crystallography at the synchrotron. This method is used to determine the 3D atomic and molecular structures of crystalline substances.
 
 ![Me wearing laser safety glasses, seated beside the laser injection setup in its black enclosure on an optical bench.](../../assets/projects/embl-laser-injection/lab-bench.jpg "even7: At the laser injection setup.")
 ![The motorized laser injection prototype on an optical bench, with a red laser beam, a fibre and a gimbal.](../../assets/projects/embl-laser-injection/laser-bench.jpg "Prototype on the optical bench.")
 ![Whiteboard notes with formulas for spot size and the geometry of the fibre and collimators.](../../assets/projects/embl-laser-injection/whiteboard-optics.jpg "even7: Optics sketches")
 ![Screen recording of beam profiler software showing a laser spot and its intensity profile.](../../assets/projects/embl-laser-injection/dataray-beam-profile.gif "even7: Focusing the laser profile")
 
-I helped develop a motorized, wide-wavelength-range laser injection system for time-resolved macromolecular X-ray crystallography at the synchrotron, a collaboration between the European Synchrotron Radiation Facility and the EMBL. Light from lasers at several wavelengths is carried by optical fibre to a collimator and focused onto the sample by an objective, steered by a motorized gimbal. The optical design draws on photonics and precision instrumentation, which I learned during this work term.
+The team had a prototype; lasers of several wavelengths send light along an optical fibre to a collimator, and an objective focuses it on the sample, steered by a motorized gimbal. My job was to measure how well it worked and optimize the design, drawing on photonics and precision instrumentation concepts.
 
 ## What I did
 

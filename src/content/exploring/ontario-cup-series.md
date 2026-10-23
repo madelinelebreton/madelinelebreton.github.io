@@ -1,5 +1,5 @@
 ---
-title: "1st - Ontario Cup Road Series"
+title: "Ontario Cup Road Series"
 org: "Ontario, with Cyclery Racing"
 dates: "2023–2024"
 group: athletics
@@ -25,4 +25,4 @@ layout: gallery
 twoRows: 5.97
 ---
 
-Won the 2024 Ontario Cup road race series, taking the series lead by winning from a two-rider breakaway, my third straight victory of the season, with strong support from my teammates.
+I won the 2024 Ontario Cup road race series with Cyclery Racing. I took the series lead by winning out of a two-rider breakaway, my third straight win of the season.

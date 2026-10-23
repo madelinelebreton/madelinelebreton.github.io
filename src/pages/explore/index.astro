@@ -4,11 +4,6 @@ import Base from '../../layouts/Base.astro';
 import EntryList from '../../components/EntryList.astro';
 import MakingList from '../../components/MakingList.astro';
 import Lightbox from '../../components/Lightbox.astro';
-import { Image } from 'astro:assets';
-import franceImg from '../../assets/explore/grenoble-belvedere.jpg';
-import athleticsImg from '../../assets/leadership/junior-worlds-team.jpg';
-import makingImg from '../../assets/projects/bench/sanding.jpg';
-import otherImg from '../../assets/explore/canoe-trip-cover.jpg';
 
 const projects = (await getCollection('projects', (p) => !p.data.draft && p.data.section === 'explore')).sort(
   (a, b) => a.data.order - b.data.order,
@@ -17,35 +12,13 @@ const all = (await getCollection('exploring', (e) => !e.data.draft)).sort((a, b)
 const athletics = all.filter((e) => e.data.group === 'athletics');
 const france = all.filter((e) => e.data.group === 'france');
 const other = all.filter((e) => e.data.group === 'other');
-const tiles = [
-  { href: '#france-h', label: 'Exchange in France', note: 'Université Grenoble Alpes and exploring the mountains', img: franceImg, focal: '50% 35%' },
-  { href: '#athletics-h', label: 'Athletics', note: 'Road and track cycling', img: athleticsImg, focal: '50% 0%' },
-  { href: '#other-h', label: 'Outdoor opportunities', note: 'Caving, canoeing, sailing and winter trips', img: otherImg, focal: '50% 50%' },
-  { href: '#projects-h', label: 'Creative projects', note: 'Beyond the lab!', img: makingImg, focal: '50% 55%' },
-];
 ---
 
-<Base title="Exploring!" description="Staying curious with creative projects, sport, and good times outdoors.">
+<Base title="Beyond the lab" description="Staying curious with creative projects, cycling, and good times outside.">
   <header class="page-head">
-    <h1>Exploring!</h1>
-    <p class="lede">Staying curious with creative projects, sport, and good times outdoors.</p>
+    <h1>Beyond the lab</h1>
+    <p class="lede">Staying curious with creative projects, cycling, and good times outside.</p>
   </header>
-
-  <nav class="paths overview" aria-label="On this page">
-    <ul>
-      {
-        tiles.map((t) => (
-          <li>
-            <a href={t.href}>
-              <Image src={t.img} alt="" widths={[320, 480, 640]} sizes="(max-width: 560px) 50vw, 25vw" format="webp" quality={78} style={`object-position:${t.focal}`} />
-              <span class="label">{t.label}</span>
-              <span class="note">{t.note}</span>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
 
   <section class="explore-section first" id="france-h" aria-label="Exchange in France">
     <EntryList entries={france} uniform />
@@ -56,7 +29,7 @@ const tiles = [
       <h2 id="athletics-h">Athletics</h2>
     </div>
     <p class="section-note">
-      Balancing academics with competitive cycling taught me time management and discipline.
+      I have raced road and track since 2022. During term I trained about 30 hours a week alongside a full academic course load, and in 2025 I raced for a French Nationale 1 team while living in France.
     </p>
     <EntryList entries={athletics} uniform />
   </section>

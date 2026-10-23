@@ -4,6 +4,7 @@ outlet: Cycling Canada
 blurb: "This year’s cohort for Junior Track Worlds continues to show the strength of our development athletes in Canada"
 date: 2022-08-12
 href: https://cyclingcanada.ca/news/cycling-canada-announces-selection-for-junior-track-world-championships/
+group: athletics
 image: ../../assets/news/junior-worlds-selection.jpg
 alt: "Five Canadian team pursuit riders in team kit beside a bike on the velodrome track, with a Canada banner behind them"
 focal: "50% 0%"

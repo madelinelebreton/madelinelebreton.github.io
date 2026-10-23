@@ -1,9 +1,10 @@
 ---
-title: "Interview on CTV's The Social for International Women's Day"
+title: "CTV's The Social"
 org: "CTV"
-order: 5
+group: athletics
+order: 8
 layout: gallery
-oneRow: true
+dates: "March 2023"
 images:
   - src: ../../assets/leadership/social-studio.jpg
     alt: "The CTV's The Social studio: two hosts on a couch beside two guests, with the show's logo over a city skyline on the screen behind, and an audience in the foreground"
@@ -16,4 +17,4 @@ links:
     href: "https://www.youtube.com/watch?v=PK6Am3nL1PI"
 ---
 
-A conversation with RBC Olympian Cynthia Appiah about women in sport, and the importance of building a community of female athletes who empower each other.
+For International Women's Day in 2023 I talked with RBC Olympian Cynthia Appiah about women in sport and building a community of female athletes.

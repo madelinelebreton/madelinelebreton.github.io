@@ -6,7 +6,7 @@ place: Santiago de Compostela, Spain
 organization: Fundación RIA
 tileRatio: 1.6
 mediaWide: true
-order: 4
+order: 2
 cover: ../../assets/projects/isochrone-accessibility/lead.gif
 coverAlt: "Animation of the app's map: a pin on Noia, then walking isochrones in blue, cycling in green and driving in orange spreading out around it with pharmacies marked, and the layers switched off again."
 coverAside:
@@ -18,6 +18,8 @@ links:
   - label: Project repository on GitHub
     href: https://github.com/madelinelebreton/isochrone-accessibility-app
 tags: [data]
+group: "spatial"
+outcome: "A Shiny app that draws walking, cycling and driving travel time areas and exports them to QGIS."
 ---
 An interactive R Shiny tool that answers spatial accessibility questions for non-technical users. Click a point on the map (or search an address), pick travel modes and OpenStreetMap amenities, and the app draws travel-time isochrones, overlays the amenities that fall inside them, and exports everything as a QGIS-ready GeoPackage.
 
@@ -31,6 +33,8 @@ An interactive R Shiny tool that answers spatial accessibility questions for non
 ## Why I built it
 
 I built it during my internship at Fundación RIA so that architects could run accessibility analyses for site and exhibition research without writing code or opening a GIS.
+
+Architects at Casa RIA used the visualization tool for understanding the accessibility of newly proposed development sites, for various domains such as education, healthcare, and tourism.
 
 ## Features
 
@@ -74,13 +78,7 @@ The workflow is shown in the diagram below. The origin comes from a map click or
 
 The core logic is kept separate from the interface. A helpers file holds the functions for geocoding an address, parsing the time list, clamping times to each travel mode's limits, requesting isochrones, fetching amenities and assigning time bands. The Shiny interface (a bslib sidebar layout) handles the reactive state for origin, isochrones and amenities, map drawing, the layer control and export.
 
-## Using it
-
-1. Set an origin by clicking the map or searching an address.
-2. Enter isochrone times in minutes, comma-separated (default 5, 10, 15).
-3. Choose one or more travel modes.
-4. Pick amenities from the presets, or type a custom OSM `key=value` tag.
-5. Press Generate map, toggle layers as needed, then download the `.gpkg`.
+## Running it yourself
 
 The map opens on Santiago de Compostela, Galicia, but the app works anywhere OpenStreetMap and OpenRouteService have coverage. To run it yourself you need R 4.1 or later and a free OpenRouteService API key, which the app reads from an environment variable and never stores in the code. Setup steps are in the repository.
 

@@ -1,15 +1,30 @@
 ---
 title: SwimStinct
 summary: "A biomedical engineering design challenge. With a team of 4, I designed a wearable device that tells swimmers with visual impairments how far they are from the wall, using touch and sound instead of a tapper."
-year: September–December 2022
+year: "2022"
 place: McMaster University
 organization: Mechatronics Engineering, Design Solutions for Accessibility and Independence
-order: 11
+order: 1
 cover: ../../assets/projects/swimstinct/verification.gif
 coverAlt: "Animation of the device being verified in a simulated pool lane: a hand adjusts the wired device on a table with red flags as distance markers."
+facts:
+  - label: Year
+    value: "2022"
+  - label: Place
+    value: "McMaster University"
+  - label: Course
+    value: "Mechatronics Engineering, Design Solutions for Accessibility and Independence"
+  - label: Team
+    value: "Four students."
+  - label: My part
+    value: "I designed the housing in Inventor and prototyped the clip and the tapping mechanism."
+  - label: Tools
+    value: "AutoCAD Inventor, 3D printing, LEGO prototyping"
 rich: true
 tags: [robotics]
 tools: [AutoCAD Inventor, 3D printing, LEGO prototyping]
+group: "design"
+outcome: "A wearable device that alerts swimmers with visual impairments when they approach the wall."
 ---
 ![Two people at the pool edge reaching long poles with padded tips over the lane ropes to tap a swimmer in the water.](../../assets/projects/swimstinct/tappers.jpg "right: Tappers at the end of the lanes, using poles to tap swimmers with visual impairments as they approach the wall.")
 
@@ -30,7 +45,7 @@ I also tried other locations on the body, including a chest strap that would tap
 
 ### Housing
 
-The housing is a teardrop, based on the hydrodynamic form of fish bodies, to reduce drag. I designed the 3D printed assembly in AutoCAD Inventor.
+I shaped the housing as a teardrop, inspired by the streamlined bodies of fish, to reduce drag. I designed the 3D printed assembly in AutoCAD Inventor.
 
 ![A diagram of flow over a streamlined body, with laminar flow, turbulent flow, boundary layer separation and the wake labelled.](../../assets/projects/swimstinct/housing-flow.jpg "even12: Flow around a streamlined body, the reasoning behind the teardrop shape.")
 ![My sketch of the one-piece hydrodynamic teardrop housing, with the embedded tapper, buzzer, goggle strap holes and distance sensor labelled.](../../assets/projects/swimstinct/housing-sketch.jpg "My sketch of the one-piece housing.")

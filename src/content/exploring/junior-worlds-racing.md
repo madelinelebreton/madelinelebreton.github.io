@@ -1,5 +1,5 @@
 ---
-title: "Represented Canada at the Junior Track Cycling World Championships"
+title: "Junior Track World Championships"
 org: "Tel Aviv, Israel"
 dates: "August 2022"
 group: athletics
@@ -19,4 +19,4 @@ links:
     href: "https://cyclingcanada.ca/news/cycling-canada-announces-selection-for-junior-track-world-championships/"
 ---
 
-Member of the Canadian National Cycling Team at the UCI Junior Track Cycling World Championships in Tel Aviv, Israel. Raced the Team Pursuit and the 500 m time trial.
+I raced the team pursuit and the 500 m time trial for Canada at the UCI Junior Track World Championships in Tel Aviv in August 2022. I was also the 2022 national junior team pursuit champion.

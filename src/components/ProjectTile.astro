@@ -4,8 +4,9 @@ import type { CollectionEntry } from 'astro:content';
 
 interface Props {
   project: CollectionEntry<'projects'>;
+  outcome?: boolean; // show the one-line outcome under the title (Work page)
 }
-const { project } = Astro.props;
+const { project, outcome = false } = Astro.props;
 const d = project.data;
 const sizes = '(max-width: 560px) 100vw, (max-width: 820px) 50vw, (max-width: 1100px) 33vw, 300px';
 ---
@@ -32,6 +33,7 @@ const sizes = '(max-width: 560px) 100vw, (max-width: 820px) 50vw, (max-width: 11
       {d.placeholder && <span class="flag">{d.placeholder}</span>}
     </div>
     <h3>{d.title}</h3>
+    {outcome && d.outcome && <p class="outcome">{d.outcome}</p>}
     <p class="meta">
       {[d.year, d.place].filter(Boolean).join(', ')}
       {d.organization && <><br />{d.organization}</>}

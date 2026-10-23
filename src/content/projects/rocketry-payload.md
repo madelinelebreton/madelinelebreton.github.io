@@ -1,12 +1,25 @@
 ---
 title: Fracture-test payload on Osiris
-summary: A payload module that tests how epoxy samples fracture under rocket flight loads, flown on McMaster Rocketry's rocket Osiris at Launch Canada 2026.
+summary: "I designed the experiment and the battery housing for a payload that placed first in the Payload Challenge at Launch Canada 2026."
 year: 2025–26
 place: Hamilton, Ontario
 organization: McMaster Rocketry
 role: Experiment and battery housing design
-order: 1
-latest: 1
+facts:
+  - label: Year
+    value: "2025–26"
+  - label: Place
+    value: "Hamilton, Ontario"
+  - label: Organization
+    value: "McMaster Rocketry"
+  - label: Role
+    value: "Experiment design and battery housing, Payload team."
+  - label: Team
+    value: "Team of 7."
+  - label: Tools
+    value: "Onshape, Autodesk Inventor stress analysis, 3D printing, Excel."
+order: 2
+latest: 4
 cover: ../../assets/projects/rocketry-payload/lead.jpg
 coverAlt: Assembled cylindrical payload frame on a table at a competition.
 focal: center 40%
@@ -41,18 +54,26 @@ embeds:
 rich: true
 tags: [instrumentation, robotics]
 tools: [Onshape, Finite element analysis, 3D printing]
+group: "robotics"
+outcome: "Experiment and battery housing for a payload that placed first in the Payload Challenge."
 ---
-I worked with the Payload team to design and build the experimental module, where the onboard fracture test module experiment for self-healing polymers won first place in the Payload Challenge. Osiris reached an altitude of 33,551 ft and a top speed of Mach 2.
+McMaster Rocketry's rocket Osiris flew at Launch Canada 2026, a student rocketry challenge held in Timmins, Ontario. Our payload, Magpie, placed first in the Payload Challenge. The flown module was a baseline fracture test of epoxy samples under real flight loads, as groundwork for a later self-healing polymer payload. Osiris reached 33,528 ft and a top speed of Mach 2.
 
-The flown module was a baseline fracture test of epoxy samples. The team's page describes it as groundwork for a later self-healing polymer payload.
-
-I was in charge of designing the experiment implementation and the battery housing assembly. This page follows my work from choosing the experiment, designing and validating the fracture mechanism, then designing and printing the battery case.
+I worked on two parts of the payload: designing the fracture experiment with the team, and designing the battery housing. This page follows both, from the decision matrix to the printed case.
 
 ![The rocket Osiris, white with the team's sponsor logos and a gold-and-black chevron pattern.](../../assets/projects/rocketry-payload/osiris-rocket.png "tallspan: Osiris, the team's rocket for Launch Canada 2026.")
 
 ![Five payload team members standing with the rocket in front of an engineering building.](../../assets/projects/rocketry-payload/payload-team.jpg "wide: Payload team with the rocket.")
 
-The goal was our ascent at Launch Canada 2026, Canada’s premier rocketry challenge. The payload is a stack of three identical experiment stations above three circuit boards, held in an aluminum frame inside the 4 inch airframe.
+The payload is a stack of three identical experiment stations above three circuit boards, held in an aluminum frame inside a 4 inch airframe.
+
+## At a glance
+
+- **Experiment.** A tapered double cantilever beam (TDCB) fracture test, modified so the crack can be closed again. Three identical stations fly.
+- **Critical load.** 39 N for a 6.35 mm sample with a 2.5 mm groove. The first lead-screw concept needed 0.41 Nm of torque with a factor of safety of 3, before the design moved to a single linear actuator.
+- **Mass.** 327 g per module, 981 g for three, within a 1.6 kg payload allocation.
+- **Simulation.** Widening the weakest regions of the sample and thickening its base by 2 mm raised the factor of safety above 3 in the stress analysis.
+- **Battery case.** Four Onshape versions, printed and tested with a snap fit.
 
 ![The Magpie payload poster: a render of the cylindrical payload in the centre, with sections on the experiment, the bus and the electronics.](../../assets/projects/rocketry-payload/magpie-poster.jpg "even26: The Magpie payload poster")
 ![CAD render of the payload module with three experiment stations above a stack of three circuit boards.](../../assets/projects/rocketry-payload/payload-cad.png "even26: The payload module CAD assembly")
@@ -62,7 +83,7 @@ The goal was our ascent at Launch Canada 2026, Canada’s premier rocketry chall
 
 ## Experimental design
 
-The payload experiment defines the scientific value of a flight. In flight the payload experiences vibration, mechanical stress and acceleration that cannot be replicated in a laboratory, and our goal was to produce novel data for aerospace materials engineering, bridging the gap between ground-based testing and full scale deployment.
+The payload experiment defines the scientific value of a flight. In flight the payload sees vibration, acceleration and mechanical stress together, which is hard to reproduce in a lab. We wanted data from that environment on how epoxy fractures, as a baseline for self-healing materials, which offer promising applications in reusable rockets.
 
 | Objectives | Constraints |
 | --- | --- |
@@ -315,6 +336,6 @@ I worked with the Controls and Airframe teams to integrate sensors for structura
 
 **CAD and workflow.** Parameterization and structured modelling matter. Early modelling choices caused rework in Onshape, while later variables and stable references made iteration much faster, and I carried that into my spreadsheet calculations. Organized notes with clear headings also sped up revisiting decisions, calculations and assumptions.
 
-**Engineering judgment.** My professor Dr. Onaizah’s principle, "all models are wrong, but some are useful", held here. Both the analytical calculations and the FEA relied on simplifying assumptions, but they gave useful insight. I learned to use models as decision making tools rather than expect perfect accuracy.
+**Engineering judgment.** The saying "all models are wrong, but some are useful" held here. Both the analytical calculations and the FEA relied on simplifying assumptions, but they gave useful insight. I learned to use models as decision making tools rather than expect perfect accuracy.
 
 **Direction.** I was most interested in system behaviour and iterative problem solving. I’m drawn to work that combines physical systems with analytical reasoning, which reinforces my interest in a mechatronics focused career, particularly roles in hardware and software integration, controls and system design.

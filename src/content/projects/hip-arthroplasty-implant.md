@@ -1,18 +1,33 @@
 ---
 title: Hip implant for developmental hip dysplasia
 summary: A team design project for a long-lasting total hip replacement that realigns the hip and promotes bone ingrowth, with the material choice backed by hand calculations.
-year: September–December 2022
+year: "2022"
 place: McMaster University
 organization: Mechatronics Engineering, Health Solutions Engineering Design Projects
-order: 12
+order: 2
 cover: ../../assets/projects/hip-arthroplasty-implant/cover-cad-xray.png
 coverAlt: On the left, the implant in CAD, exploded into the acetabular cup, liner, femoral head and a tapered femoral stem. On the right, an X-ray of a hip affected by dysplasia, with a plate and screws fixed to the femur.
 rich: true
 hideCover: true
 fit: contain
 plate: "#ffffff"
+facts:
+  - label: Year
+    value: "2022"
+  - label: Place
+    value: "McMaster University"
+  - label: Course
+    value: "Mechatronics Engineering, Health Solutions Engineering Design Projects"
+  - label: Team
+    value: "4 students."
+  - label: My part
+    value: "The materials selection and calculations (fracture risk, fatigue life, bone stress reduction) and the 3D-printed prototypes."
+  - label: Tools
+    value: "AutoCAD Inventor, 3D printing, Materials selection"
 tools: [AutoCAD Inventor, 3D printing, Materials selection]
 tags: [instrumentation]
+group: "design"
+outcome: "A total hip replacement design, with the material choice backed by hand calculations."
 ---
 For the final project of Health Solutions Engineering Design Projects, our team designed an implant for a patient case with Developmental Hip Dysplasia, a condition of the femoral head and the acetabulum of the pelvis. The implant realigns the hips and promotes bone ingrowth.
 
@@ -29,9 +44,9 @@ I started with preliminary research on the condition, then sketched the design t
 
 ## Materials selection
 
-I did the calculations for the metal of the acetabular component and the femoral stem. The choice was a β-type titanium alloy, Ti-6Al-7Nb, for its high ultimate strength, which gives a low fracture risk, and its softer cubic lattice phase, which reduces stress shielding. A porous hydroxyapatite coating promotes bone ingrowth. I worked out the fracture risk, the fatigue life and the magnitude of bone stress reduction from material property formulas, and compared metals and ceramics, with longevity and stress shielding in mind.
+I did the calculations for the metal of the acetabular component and the femoral stem. The choice was the titanium alloy Ti-6Al-7Nb, for its high ultimate strength, which gives a low fracture risk, and its α+β phase reduces stress shielding. A porous hydroxyapatite coating promotes bone ingrowth. I worked out the fracture risk, the fatigue life and the magnitude of bone stress reduction from material property formulas, and compared metals and ceramics, with longevity and stress shielding in mind.
 
-![Whiteboard calculation of fracture risk for a titanium implant: axial stress plus bending stress divided by ultimate tensile strength, giving about 2.7.](../../assets/projects/hip-arthroplasty-implant/calc-fracture-risk.jpg "evenlg: 1. Fracture risk: the axial and bending stresses against the alloy's ultimate tensile strength.")
+![Whiteboard calculation of fracture risk for a titanium implant: axial stress plus bending stress divided by ultimate tensile strength.](../../assets/projects/hip-arthroplasty-implant/calc-fracture-risk.jpg "evenlg: 1. Fracture risk: the axial and bending stresses against the alloy's ultimate tensile strength.")
 ![Whiteboard calculation of fatigue life for a titanium implant under tension and compression loads, giving a stress amplitude of 530 MPa.](../../assets/projects/hip-arthroplasty-implant/calc-fatigue.jpg "2. Fatigue life, from the cyclic load.")
 ![Whiteboard calculation of bone stress reduction from the compressive stress and the elastic moduli of bone and implant, giving about 25 MPa.](../../assets/projects/hip-arthroplasty-implant/calc-stress-reduction.jpg "3. Magnitude of bone stress reduction.")
 

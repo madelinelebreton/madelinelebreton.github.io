@@ -14,4 +14,4 @@ links:
     href: "https://www.bcorporation.net/en-us/find-a-b-corp/company/making-waves-swim-school/"
 ---
 
-Awarded Head Coach of the Year. Led a team working to establish the school as a certified B Corp.
+Awarded Head Coach of the Year. I led a team working to establish the school as a certified B Corp by implementing more environmentally conscious maintenance procedures.

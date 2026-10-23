@@ -1,13 +1,9 @@
 // Single source for sidebar, home intro, footer and meta tags. Edit here, not in components.
 export const profile = {
   name: 'Madeline LeBreton',
-  descriptor: 'Mechatronics engineering · Robotics · Data · Research',
+  descriptor: 'Mechatronics engineering student · Robotics, Instrumentation and Data',
   tagline: 'Madeline LeBreton',
-  // DRAFT copy for approval: built only from facts in the Notion pages and CV.
-  bio: [
-    'I am a Mechatronics Engineering student in my final year at McMaster University.',
-    // The second home-page paragraph (with links to three work pages) is written in src/pages/index.astro.
-  ],
+  bio: [], // the home page About text is written in src/pages/index.astro
   education: 'B.Eng. Mechatronics Engineering, McMaster University (final year)',
   email: 'lebretom@mcmaster.ca', // kept for now, per Madeline
   links: [
@@ -20,7 +16,9 @@ export const profile = {
 export const nav = [
   { label: 'Work', href: '/work/' },
   { label: 'Leadership & Awards', href: '/leadership-awards/' },
-  { label: 'Exploring!', href: '/explore/' },
+  { label: 'Beyond the lab', href: '/explore/' },
   { label: 'Media', href: '/media/' },
   { label: 'CV', href: '/cv/' },
 ];
+
+export const siteDescription = 'Mechatronics engineering student at McMaster. Instrumentation, robotics and data.';

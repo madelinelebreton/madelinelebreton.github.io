@@ -20,6 +20,4 @@ images:
     focal: "50% 45%"
 ---
 
-Took a class in caving, learning the art of cave exploration.
-
-Learned to navigate new environments and discovered natural cave systems. Overcame the language barrier to work as a team and keep everyone safe.
+I took a caving class (spéléologie) in French at Université Grenoble Alpes. We explored natural cave systems as a team, and I worked across a language barrier to keep everyone safe.

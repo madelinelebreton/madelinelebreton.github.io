@@ -1,7 +1,7 @@
 ---
 title: "McMaster Engineering Future Leader Award"
 org: "McMaster Faculty of Engineering"
-dates: "April 2026"
+dates: "March 2026"
 order: 1
 images:
   - src: ../../assets/leadership/future-leader-solo.jpg

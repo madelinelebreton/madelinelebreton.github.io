@@ -13,7 +13,7 @@ gallery:
     alt: "Animation of the ring-making process: silver spoons on a workbench, handle strips cut with a saw, a strip filed and sanded in a vise, a rotary tool, a belt sander, a strip hammered around a copper pipe, and the finished rings"
     caption: "The process, from spoons to finished rings."
 ---
-Turning heirloom silver spoons into custom rings.
+Turning heirloom silver spoons into custom rings. I have made over a dozen silver rings by cutting, shaping with a belt sander, bending according to a ring measurement tool, and polishing using a dremel tool.
 
 ![Three narrow silver ring blanks cut from spoon handles, lying on a workbench.](../../assets/projects/rings/cover.jpg)
 

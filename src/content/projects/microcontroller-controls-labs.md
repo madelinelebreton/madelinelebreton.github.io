@@ -4,7 +4,7 @@ summary: "Lab and course projects in embedded C on a PIC16F887, a sequential dig
 year: Course projects
 place: McMaster University
 organization: Mechatronics Engineering
-order: 9
+order: 3
 cover: ../../assets/projects/microcontroller-controls-labs/ball-and-beam.gif
 coverAlt: Animation of a ball-and-beam rig on a lab bench next to a laptop plotting the response live as the ball is balanced.
 coverWidth: 49
@@ -14,20 +14,26 @@ coverAside:
 tools: [C, PIC16F887, MPLAB, Multisim]
 rich: true
 tags: [robotics]
+group: "robotics"
+outcome: "Embedded C on a PIC16F887, a sequential circuit from simulation to breadboard, and a ball-and-beam controls lab."
 ---
 ![Two green circuit boards and a white development board wired together inside a clear acrylic case, seen from above and turned on its side](../../assets/projects/microcontroller-controls-labs/microcontroller-boards.jpg "even19: Microcontroller boards in their acrylic case.")
 ![A lab bench with two power supplies, a multimeter, an oscilloscope, a laptop and jumper wires on a breadboard](../../assets/projects/microcontroller-controls-labs/analog-bench.jpg "Analog circuit lab bench.")
 ![A large breadboard densely wired with jumper wires and green tape labels](../../assets/projects/microcontroller-controls-labs/analog-breadboard.jpg "A labelled breadboard circuit.")
 ![A breadboard with colourful jumper wires and green LEDs lit, beside a signal generator and an oscilloscope](../../assets/projects/microcontroller-controls-labs/analog-leds.jpg "A breadboard circuit with lit LEDs.")
 
-Lab and course work from my mechatronics degree at McMaster: embedded programming in C on a PIC16F887 microcontroller, a digital circuit taken from analysis through simulation to a working breadboard, and a controls lab balancing a ball on a beam with the live response plotted on a laptop. The code for the controls work is in my [Control systems repository on GitHub](https://github.com/madelinelebreton/control-systems).
+These are lab projects from my mechatronics coursework: embedded C on a PIC16F887 microcontroller, a sequential digital circuit taken from analysis to a working breadboard, and a ball & beam controls lab. The controls code is on GitHub, in my [Control systems repository](https://github.com/madelinelebreton/control-systems).
+
+## Ball-and-beam controls lab
+
+In this lab I designed a controller for a ball-and-beam system in MATLAB and Simulink. I built it up in stages from a PD controller to a PID controller, and analyzed the steady-state error and the disturbance rejection as the integrator term was added. The code is in the `pid-controller-ball-beam` folder of the repository.
 
 <div class="two-col">
 <div>
 
 ## Introduction to Microcontroller Systems
 
-The course covered programming a PIC16F887 in C, including the standard peripherals (I/O, timers, the ADC and a serial link), the internal structure of a processor, and an introduction to interrupts.
+I programmed a PIC16F887 in C using its I/O, timers, ADC, serial link and interrupts.
 
 </div>
 <div>
@@ -65,16 +71,14 @@ void light_LED(short int LED){
 
 ![Animation of C code open on a monitor, scrolling through the motor control functions.](../../assets/projects/microcontroller-controls-labs/pedagobot.gif "Debugging the PedagoBot")
 
-For the final project I programmed the PedagoBot robot to perform complex behaviour, using I/O ports, timers, PWM signals, interrupts, the ADC and the RS232 serial link together.
+For the final project I programmed the PedagoBot robot to navigate an obstacle course, using I/O ports, timers, PWM, interrupts, the ADC and the RS232 link together.
 
 </div>
 </div>
 
 ## Analog and Digital Circuits
 
-This course covered how to design and analyze analog and digital circuits: component and circuit analysis and theorems, binary numbers, Boolean analysis and digital circuit design.
-
-The final project was to simulate and build a sequential circuit that cycles through a student number.
+Final project: a sequential circuit that cycles through a student number. I solved it with Karnaugh maps, simulated it in Multisim, where the timing diagram matched my analysis, and built it on a breadboard with two dual JK flip-flop chips (74HC109N) and one quad AND chip (74HC08).
 
 ![Circuit schematic with four JK flip-flops, AND gates, a clock and four LEDs with resistors.](../../assets/projects/microcontroller-controls-labs/circuit-schematic.png "wide: The final circuit: four flip-flops clocked together, with an LED on each output.")
 
@@ -82,10 +86,7 @@ The final project was to simulate and build a sequential circuit that cycles thr
 
 I solved the circuit analytically with sum-of-products expressions and Karnaugh maps for every JK input. That gave optimized truth tables for the JK flip-flops, a state transition table and an excitation table.
 
-![State transition table with the current state of four flip-flops and two counters for each digit.](../../assets/projects/microcontroller-controls-labs/state-table.png "even14: The state transition table.")
-![Colour-coded Karnaugh maps for the flip-flop inputs.](../../assets/projects/microcontroller-controls-labs/kmaps.png "The Karnaugh maps.")
-
-![Colour-coded JK flip-flop truth table and excitation table.](../../assets/projects/microcontroller-controls-labs/jk-tables.png "even15: The JK flip-flop and excitation tables, colour-coded to match the K-maps.")
+![Colour-coded Karnaugh maps for the flip-flop inputs.](../../assets/projects/microcontroller-controls-labs/kmaps.png "even16: The Karnaugh maps.")
 ![Hand-drawn state transition diagram of the finite state machine, with states shown as four-bit binary numbers.](../../assets/projects/microcontroller-controls-labs/state-diagram.png "The state transition diagram.")
 
 Next I drew the state transition diagram and a timing diagram of the finite state machine, to show how the clock pulses move it between states.

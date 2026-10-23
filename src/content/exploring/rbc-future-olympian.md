@@ -2,7 +2,8 @@
 title: "RBC Future Olympian"
 org: "RBC Training Ground National Final"
 dates: "January 2022"
-order: 8
+group: athletics
+order: 7
 images:
   - src: ../../assets/leadership/rbc-training-ground.jpg
     alt: "Two athletes in numbered RBC Training Ground shirts standing beside an RBC Training Ground banner"
@@ -17,4 +18,4 @@ links:
     href: "https://olympic.ca/2022/01/08/finding-canadas-future-olympians-through-rbc-training-ground/"
 ---
 
-Named one of 30 RBC Future Olympians at the RBC Training Ground National Final, nominated by Cycling Canada. Recorded a top-3 score on the endurance bike.
+In January 2022 I was named one of 30 RBC Future Olympians at the National Final, nominated by Cycling Canada. Recorded a top-3 score on the endurance bike.

@@ -1,38 +1,38 @@
 ---
-title: Extended Degrees of Freedom Robotic Visual System with Computer Vision Control
-summary: A capstone project continuing TWIST2, with the Pediatric Image-Guided Therapy Innovation Lab at The Hospital for Sick Children.
+title: Humanoid robot neck with visual tracking
+subtitle: Extended Degrees of Freedom Robotic Visual System with Computer Vision Control
+summary: "Working on a team of six to extend a humanoid robot's neck with more degrees of freedom and camera tracking, for surgical robotics research."
 year: April 2026–present
 place: McMaster University
-organization: "Lab contact: Thomas Looi"
-order: 0
+order: 1
 cover: ../../assets/projects/capstone-twist2/placeholder.jpg
 coverAlt: The PCIGITI logo, in white on blue, with the lab's full name, the Wilfred and Joyce Posluns Centre for Image-Guided Innovation and Therapeutic Intervention.
 fit: contain
 plate: "#244f78"
 coverWidth: 24
 status: in-progress
-placeholder: In progress
-notice: In progress. Design documentation coming soon!
+facts:
+  - label: Dates
+    value: "April 2026 to present. In progress; design documentation to follow."
+  - label: Place
+    value: "McMaster University, Mechatronics Engineering capstone."
+  - label: Collaborator
+    value: "Pediatric Centre for Image Guided Innovation and Therapeutic Intervention (PCIGITI), The Hospital for Sick Children. Contact: Thomas Looi."
+  - label: Tools
+    value: "ROS 2, Simulink, NVIDIA Isaac Sim."
+  - label: My part
+    value: "Control and mechanical design."
 tools: [ROS 2, Simulink, NVIDIA Isaac Sim]
 tags: [robotics]
+group: "robotics"
+latest: 1
+outcome: "A six-person team extending a humanoid robot's neck for surgical-robotics research."
 ---
-Final-year capstone with the Pediatric Image-Guided Therapy Innovation Lab (PCIGITI) at The Hospital for Sick Children, in a team of six. We are developing a neck and computer-vision tracking system that keeps a workspace or object of interest in view on a Unitree G1 humanoid without moving its torso, for surgical-robotics research teleoperation. It extends the neck of the TWIST2 humanoid teleoperation system with added degrees of freedom.
+For my final-year capstone project, I'm working with a team of six to build a neck for the Unitree G1 humanoid robot. The neck has 4 degrees of freedom and a camera that tracks a workspace or object of interest, so the robot keeps it in view without moving its torso. The robot is for surgical-robotics research, where a person teleoperates it. We are extending the neck of [TWIST2](https://yanjieze.com/projects/TWIST2/), a humanoid teleoperation system. TWIST2 is a portable, scalable humanoid data collection system with whole-body control, used to collect long-horizon, whole-body, dexterous loco-manipulation data from the robot's own point of view.
 
-## What I'm learning
+## Tools
 
-Using this project to gain experience with three robotics tools: ROS 2, Simulink and Isaac Sim. Implementing what I have learned in the classroom, this project is a chance to use that material on a real system.
-
-### ROS 2
-
-ROS 2 is the middleware robot software is built around: separate programs, called nodes, publish and subscribe to messages, so sensing, vision and control can be developed on their own and then connected. It builds on Operating Systems, Real-Time Systems & Control Applications and Embedded Systems Design.
-
-### Simulink
-
-Simulink is for modelling the neck's dynamics and tuning its controllers before anything is built. It brings together Dynamic Models & Control of Physical Systems and Predictive & Intelligent Control, and my controls and microcontroller labs.
-
-### Isaac Sim
-
-Isaac Sim is NVIDIA's physics-based robot simulator, used to test the robot's motion and what its camera sees before trying it on hardware. It draws on Robotics, CAD/CAM/CAE and Image Processing.
+The team uses ROS 2 to connect the robot's sensing, vision and control programs as separate nodes that pass messages to each other. Simulink lets us model the neck's dynamics and tune its controllers before we build anything. Isaac Sim, NVIDIA's robot simulator, lets us test the neck's motion and what its camera sees before we run on hardware.
 
 ## Coursework in use
 

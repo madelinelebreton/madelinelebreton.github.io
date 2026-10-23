@@ -17,18 +17,25 @@ const { Content } = await render(project);
 <article class={d.compact ? 'compact' : undefined}>
   <header class="page-head">
     <h1>{d.title}</h1>
+    {d.subtitle && <p class="subtitle">{d.subtitle}</p>}
     <p class="lede">{d.summary}</p>
   </header>
 
-  <dl class="project-meta">
-    <dt>Year</dt>
-    <dd>{d.year}</dd>
-    {d.place && (<><dt>Place</dt><dd>{d.place}</dd></>)}
-    {d.organization && (<><dt>Organization</dt><dd>{d.organization}</dd></>)}
-    {d.role && (<><dt>Role</dt><dd>{d.role}</dd></>)}
-    {d.tools.length > 0 && (<><dt>Tools</dt><dd>{d.tools.join(', ')}</dd></>)}
-    {d.status === 'in-progress' && (<><dt>Status</dt><dd>In progress</dd></>)}
-  </dl>
+  {d.facts ? (
+    <dl class="project-meta">
+      {d.facts.map((f) => (<><dt>{f.label}</dt><dd>{f.value}</dd></>))}
+    </dl>
+  ) : (
+    <dl class="project-meta">
+      <dt>Year</dt>
+      <dd>{d.year}</dd>
+      {d.place && (<><dt>Place</dt><dd>{d.place}</dd></>)}
+      {d.organization && (<><dt>Organization</dt><dd>{d.organization}</dd></>)}
+      {d.role && (<><dt>Role</dt><dd>{d.role}</dd></>)}
+      {d.tools.length > 0 && (<><dt>Tools</dt><dd>{d.tools.join(', ')}</dd></>)}
+      {d.status === 'in-progress' && (<><dt>Status</dt><dd>In progress</dd></>)}
+    </dl>
+  )}
 
   {d.placeholder && (
     d.notice ? (
@@ -148,7 +155,7 @@ const { Content } = await render(project);
   {d.links.length > 0 && (
     <div class="prose">
       <h2>{d.linksHeading}</h2>
-      <ul>{d.links.map((l) => (<li><a href={l.href} rel="noopener">{l.label}</a></li>))}</ul>
+      <ul>{d.links.map((l) => (<li><a href={l.href} rel="noopener">{l.label}</a>{l.note && <><br /><span class="link-note">{l.note}</span></>}</li>))}</ul>
     </div>
   )}
 </article>

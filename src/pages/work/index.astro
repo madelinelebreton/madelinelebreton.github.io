@@ -6,57 +6,44 @@ import ProjectTile from '../../components/ProjectTile.astro';
 const projects = (await getCollection('projects', (p) => !p.data.draft && p.data.section === 'work')).sort(
   (a, b) => a.data.order - b.data.order,
 );
-const filters = [
-  { id: 'instrumentation', label: 'Instrumentation' },
-  { id: 'data', label: 'Data' },
-  { id: 'robotics', label: 'Robotics and controls' },
-].filter((f) => projects.some((p) => p.data.tags.includes(f.id as any)));
+// Cards are grouped under headings; within a group, newest first (set with `order` in each project's front matter).
+const groups = [
+  { id: 'research', label: 'Research and instrumentation' },
+  { id: 'robotics', label: 'Robotics, controls and aerospace' },
+  { id: 'spatial', label: 'Spatial data and systems mapping' },
+  { id: 'design', label: 'Design projects' },
+]
+  .map((g) => ({ ...g, items: projects.filter((p) => p.data.group === g.id) }))
+  .filter((g) => g.items.length > 0);
+const ungrouped = projects.filter((p) => !p.data.group);
 ---
 
 <Base title="Work" description="Engineering projects and research by Madeline LeBreton.">
   <header class="page-head">
     <h1>Work</h1>
   </header>
-  <section aria-labelledby="all-h">
-    <h2 id="all-h" class="sr-only">All projects</h2>
-    <div class="filters" role="group" aria-label="Filter projects" hidden>
-      <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
-      {filters.map((f) => <button type="button" class="chip" data-filter={f.id} aria-pressed="false">{f.label}</button>)}
-    </div>
-    <p class="filter-status sr-only" role="status" aria-live="polite"></p>
-    <div class="panel">
-      <ul class="grid" id="work-grid">
-        {projects.map((p) => <ProjectTile project={p} />)}
-      </ul>
-    </div>
-  </section>
-  <script is:inline>
-    (function () {
-      var bar = document.querySelector('.filters');
-      var grid = document.getElementById('work-grid');
-      if (!bar || !grid) return;
-      bar.hidden = false;
-      var status = document.querySelector('.filter-status');
-      var tiles = Array.prototype.slice.call(grid.children);
-      function apply(id) {
-        var shown = 0;
-        tiles.forEach(function (t) {
-          var ok = id === 'all' || (t.getAttribute('data-tags') || '').split(' ').indexOf(id) > -1;
-          t.hidden = !ok;
-          if (ok) shown++;
-        });
-        Array.prototype.forEach.call(bar.querySelectorAll('button'), function (b) {
-          b.setAttribute('aria-pressed', b.getAttribute('data-filter') === id ? 'true' : 'false');
-        });
-        status.textContent = shown + (shown === 1 ? ' project shown' : ' projects shown');
-        try { history.replaceState(null, '', id === 'all' ? location.pathname : '#' + id); } catch (e) {}
-      }
-      bar.addEventListener('click', function (e) {
-        var b = e.target.closest('button');
-        if (b) apply(b.getAttribute('data-filter'));
-      });
-      var h = location.hash.slice(1);
-      if (h && bar.querySelector('[data-filter="' + h + '"]')) apply(h);
-    })();
-  </script>
+  {
+    groups.map((g) => (
+      <section aria-labelledby={`${g.id}-h`} class="work-group">
+        <h2 id={`${g.id}-h`}>{g.label}</h2>
+        <div class="panel">
+          <ul class="grid">
+            {g.items.map((p) => <ProjectTile project={p} outcome />)}
+          </ul>
+        </div>
+      </section>
+    ))
+  }
+  {
+    ungrouped.length > 0 && (
+      <section aria-labelledby="more-h" class="work-group">
+        <h2 id="more-h">More</h2>
+        <div class="panel">
+          <ul class="grid">
+            {ungrouped.map((p) => <ProjectTile project={p} outcome />)}
+          </ul>
+        </div>
+      </section>
+    )
+  }
 </Base>

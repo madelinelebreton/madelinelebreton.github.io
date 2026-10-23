@@ -20,6 +20,4 @@ links:
     href: "https://www.yoalin.org/about-yoalin/how-it-all-started/"
 ---
 
-Selected to attend the kickoff event in Poschiavo, Switzerland, in collaboration with the International Commission for the Protection of the Alps (CIPRA).
-
-Connected with leaders from the Alpine Convention and Rhätische Bahn to discuss challenges and opportunities for sustainable mobility and tourism. Explored the culture and sustainable development of the Alps with a community of young changemakers.
+In 2025 I volunteered as an ambassador for the Youth Alpine Interrail Network (YOALIN), a network of young Europeans working on responsible development in the Alps. I was selected for the kickoff event in Poschiavo, Switzerland, organized with the International Commission for the Protection of the Alps (CIPRA). I took part in plenary discussions with leaders from the Alpine Convention and the Rhätische Bahn on sustainable mobility and tourism.

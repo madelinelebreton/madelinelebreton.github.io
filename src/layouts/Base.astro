@@ -1,14 +1,17 @@
 ---
 import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
-import { profile } from '../data/profile';
+import { profile, siteDescription } from '../data/profile';
 
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  home?: boolean; // the home page uses the full title only
 }
-const { title, description = `${profile.name}: ${profile.descriptor}.` } = Astro.props;
-const pageTitle = title ? `${title} | ${profile.name}` : `${profile.name} | Portfolio`;
+const { title, description = siteDescription, image = '/og-preview.jpg', home = false } = Astro.props;
+const pageTitle = title ? (home ? `${profile.name} | ${title}` : `${title} | ${profile.name}`) : `${profile.name} | Portfolio`;
+const ogImage = new URL(image, Astro.site);
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -26,6 +29,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="Madeline LeBreton in a lab coat and safety glasses at a computer in the Higgins Lab, with two colleagues behind her" />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>

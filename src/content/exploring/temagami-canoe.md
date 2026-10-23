@@ -11,4 +11,4 @@ images:
     alt: "A line of canoes on open water under a cloudy sky"
 ---
 
-A weeklong canoe trip on the waters of Temagami: an experience in collaboration, trust and personal growth. Learned to embrace the unexpected.
+A week long canoe trip travelling the waters of Temagami.

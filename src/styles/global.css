@@ -2007,3 +2007,37 @@ article.compact .p-gallery.grid li.wide img {
   max-width: none;
   width: 100%;
 }
+
+/* the line under each publication on the home page */
+.pub-cards .role {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+/* Work page: cards grouped under headings, each with a one-line outcome */
+.work-group + .work-group {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+.work-group > h2 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+}
+.tile .outcome {
+  margin: 0.35rem 0 0.5rem;
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
+.page-head .subtitle {
+  margin: 0.9rem 0 0.9rem;
+  color: var(--blue-soft);
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.link-note { font-size: 0.9em; color: var(--blue-soft); }
+
+.media-group + .media-group { margin-top: 3rem; }
+.media-group-h { margin: 2rem 0 0.5rem; font-size: 1.35rem; }
+.cv-download { margin: 0 0 1rem; }

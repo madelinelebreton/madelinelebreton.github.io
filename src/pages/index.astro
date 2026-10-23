@@ -11,7 +11,7 @@ import collageGrenoble from '../assets/explore/grenoble-belvedere.jpg';
 import collageCamera from '../assets/explore/summit-camera.jpg';
 import collageBuffaz from '../assets/explore/buffaz-headshot-backdrop.jpg';
 import collageRia from '../assets/projects/fundacion-ria-internship/ria-supervisors-wide.jpg';
-import { profile } from '../data/profile';
+import { profile, siteDescription } from '../data/profile';
 import { publications } from '../data/publications';
 
 // "Latest projects" row. Projects with a `latest` number in their front matter are pinned, left to right.
@@ -23,7 +23,7 @@ const latestYear = (y: string) =>
     ...(y.match(/\d{4}/g) ?? []).map(Number),
     ...[...y.matchAll(/(\d{2})(\d{2})[–-](\d{2})(?!\d)/g)].map((m) => Number(m[1] + m[3])),
   );
-const LATEST_COUNT = 4; // one row on desktop
+const LATEST_COUNT = 7; // the selected projects, pinned with `latest` in their front matter
 const all = await getCollection('projects', (p) => !p.data.draft && p.data.section === 'work');
 const pinned = all.filter((p) => p.data.latest !== undefined).sort((a, b) => a.data.latest! - b.data.latest!);
 const byRecency = all
@@ -41,7 +41,7 @@ const collage = [
 // Share of the strip's photo width taken by photos 1 and 2, so the bio and Publications line up with the strip's columns.
 const ratios = collage.map((c) => c.src.width / c.src.height);
 const ratioSum = ratios.reduce((a, b) => a + b, 0);
-// Entry points to the other pages. Sport and Exploring! both lead to the Exploring! page.
+// Entry points to the other pages. Sport and Beyond the lab both lead to the same page.
 const paths = [
   {
     href: '/explore/#athletics-h',
@@ -61,7 +61,7 @@ const paths = [
   },
   {
     href: '/explore/',
-    label: 'Exploring!',
+    label: 'Beyond the lab',
     note: 'Travel and good times outside',
     src: exploringPhoto,
     alt: 'Three friends smiling together on a snowy mountain ridge at sunset in the French Alps',
@@ -71,7 +71,7 @@ const paths = [
 const [first, ...rest] = profile.descriptor.split(' · ');
 ---
 
-<Base>
+<Base title="Mechatronics engineering, McMaster University" description={siteDescription} home>
   <section class="hero" aria-label="Introduction">
     <div class="hero-inner">
       <h1>{profile.name}</h1>
@@ -98,12 +98,15 @@ const [first, ...rest] = profile.descriptor.split(' · ');
         <div class="section-head">
           <h2 id="about-h">About</h2>
         </div>
-        <p>{profile.bio[0]}</p>
         <p>
-          My work spans research instrumentation, electrochemistry, robotics and data tools, with experience from the{' '}
-          <a href="/work/sift-ms-co2-reduction/">National Research Council of Canada</a>, to the{' '}
-          <a href="/work/embl-laser-injection/">European Photon and Neutron Science Campus</a> and{' '}
-          <a href="/work/fundacion-ria-internship/">Fundación RIA</a> in Galicia.
+          I'm a final-year Mechatronics Engineering student at McMaster University, graduating in 2027. I've built and tested instruments and the software around them: a laser injection system at{' '}
+          <a href="/work/embl-laser-injection/">EMBL Grenoble</a> in France, a real-time mass spectrometry method at the{' '}
+          <a href="/work/sift-ms-co2-reduction/">National Research Council of Canada</a>, a{' '}
+          <a href="/work/rocketry-payload/">payload experiment that flew on a student rocket</a>, and geospatial data tools at{' '}
+          <a href="/work/fundacion-ria-internship/">Fundación RIA</a> in Spain.
+        </p>
+        <p>
+          Currently working on: Engineering <a href="/work/capstone-twist2/">capstone design project</a>, with the Pediatric Centre for Image Guided Innovation and Therapeutic Intervention: a neck and camera tracking system for a humanoid robot.
         </p>
       </div>
     </div>
@@ -120,6 +123,7 @@ const [first, ...rest] = profile.descriptor.split(' · ');
                 <a href={p.href} rel="noopener">{p.title}</a>
                 <span class="by"><strong>{p.venue}</strong>{p.date}, {p.lab}</span>
               </p>
+              {p.role && <p class="role">{p.role}</p>}
             </li>
           ))
         }
@@ -129,7 +133,7 @@ const [first, ...rest] = profile.descriptor.split(' · ');
 
   <section aria-labelledby="work-h">
     <div class="section-head">
-      <h2 id="work-h">Latest projects</h2>
+      <h2 id="work-h">Selected projects</h2>
       <a class="view-all" href="/work/">View all work</a>
     </div>
     <div class="panel">

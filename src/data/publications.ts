@@ -8,15 +8,17 @@ export const publications = [
     href: 'https://doi.org/10.1021/jacs.5c22794',
     project: 'no3r-electrocatalysis',
     lab: 'Higgins Lab',
+    role: 'I ran H-cell experiments, quantified products by UV-vis and NMR, and analyzed the resulting data.',
   },
   {
     title:
       'Elucidating the Impact of the Metal Center Identity and Macrocycle Structure of Molecular Catalysts for Electrochemical Reduction of Nitrate to Ammonia',
     venue: 'ACS Catalysis',
-    date: 'January 2026',
+    date: 'December 2025',
     href: 'https://pubs.acs.org/doi/10.1021/acscatal.5c06580',
     project: 'no3r-electrocatalysis',
     lab: 'Higgins Lab',
+    role: 'I ran copper-based porphyrin and phthalocyanine catalyst case studies, and designed the journal cover.',
   },
   {
     title:
@@ -26,5 +28,6 @@ export const publications = [
     href: 'https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c04792',
     project: 'sift-ms-co2-reduction',
     lab: 'National Research Council Canada',
+    role: 'Author. I helped develop the real-time quantification method and ran flow cell experiments and data analysis.',
   },
 ];

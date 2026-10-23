@@ -5,7 +5,7 @@ year: "2026"
 place: Santiago de Compostela, Spain
 organization: Fundación RIA
 tileRatio: 1.6
-order: 7
+order: 3
 cover: ../../assets/projects/aemet-climate-app/lead.jpg
 coverAlt: Heatmap titled "Annual Temperature Anomalies by Station (1997-2026)", with stations down the side, years across the bottom and blue to red colouring.
 focal: 50% 40%
@@ -35,12 +35,14 @@ embeds:
     maxRem: 62
     openLabel: Open the notebook in a new tab
 tags: [data]
+group: "spatial"
+outcome: "Matches Galician municipalities to the nearest weather station and exports Excel workbooks."
 ---
 An interactive R Shiny app that turns open data from AEMET, Spain's national weather service, into data tables for any list of municipalities, with no code required from the user. Upload a spreadsheet of municipalities and the app geocodes them, matches each to its nearest AEMET weather station, pulls monthly climate records for the years you choose, and exports tidy Excel workbooks.
 
 ## Why I built it
 
-I built this geospatial analysis framework during my internship at Fundación RIA, using R and Python to make environmental data more accessible to architects. Getting climate records out of AEMET normally means API calls, station lookups and reshaping data by hand. The app wraps that whole workflow in a four-step interface so people who are not comfortable writing code can get the data they need.
+I built this at Fundación RIA to streamline the accessibility of climate data for architects to access to climate records without writing code. Getting records out of AEMET normally requires API calls, station lookups and reshaping tables by hand. The app puts those steps in four tabs. It was used for environmental projects and exhibition planning.
 
 ## What it does
 

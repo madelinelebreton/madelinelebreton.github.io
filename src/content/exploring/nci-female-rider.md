@@ -1,7 +1,8 @@
 ---
-title: "National Cycling Institute Female Rider of the Year"
+title: "National Cycling Institute"
 org: "National Cycling Institute, Milton, Ontario"
-dates: "2022; mentor from November 2021 to December 2024"
+dates: "2022"
+group: athletics
 order: 6
 images:
   - src: ../../assets/leadership/cycling-velodrome.jpg
@@ -13,6 +14,4 @@ links:
     href: "https://ncirevolution.com/youth-high-performance-year-end-finale/"
 ---
 
-Awarded Female Rider of the Year, recognizing competitive results and contributions to team development and the cycling community.
-
-Volunteered as a mentor for women in cycling, leading development clinics and Learn-to-Race opportunities.
+Female Rider of the Year, 2022. From November 2021 to December 2024 I also mentored youth and women in cycling, leading development clinics and Learn to Race events.
