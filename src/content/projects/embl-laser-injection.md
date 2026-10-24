@@ -1,6 +1,6 @@
 ---
 title: Laser injection system for synchrotron crystallography
-summary: "I mapped the optics of a motorized laser injection system and fixed a misalignment in its design."
+summary: "Characterized the optics of a motorized laser injection system and fixed a misalignment in the mechanical design."
 year: "2025"
 place: European Photon and Neutron Science Campus, Grenoble, France
 organization: EMBL Instrumentation Team

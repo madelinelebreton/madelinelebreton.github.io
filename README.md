@@ -367,3 +367,4 @@ Same as a leadership entry: one Markdown file in `src/content/exploring/` plus p
 - CV page: removed the "Download CV (PDF)" button
 - Beyond the lab: every photo row is now 12.9rem tall (the height of the French Alps rows); the per-entry two-row and tile-height settings on Ontario Cup, rings and bench were removed
 - Work page: back to the original tiles (title, year, place, organization, no one-line outcomes) in the original order, now under four headings: Research and instrumentation, Robotics and controls, Spatial data and systems mapping (includes the Kumu water-cycle map), Design projects
+- EMBL page: summary line now reads "Characterized the optics of a motorized laser injection system and fixed a misalignment in the mechanical design."
