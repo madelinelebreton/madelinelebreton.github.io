@@ -58,9 +58,9 @@ plate: '#ffffff'
 group: "research"
 outcome: "Characterized a motorized gimbal; my analysis led to a redesign of the prototype."
 ---
-I built a theoretical model of the system's transmission rate and laser spot size. My automated characterization scans showed that the gimbal repeats a position to about ±6 µm and crosses its full focused range in 1.3 s at maximum speed. After the mechanical redesign, the prototype was fully functional across its range.
-
 During the summer of 2025 I worked in the Instrumentation Team at the European Molecular Biology Laboratory in Grenoble, which builds scientific instruments for synchrotron beamlines and cryo-electron microscopy. My project was a laser injection system for time-resolved X-ray crystallography at the synchrotron. This method is used to determine the 3D atomic and molecular structures of crystalline substances.
+
+I built a theoretical model of the system's transmission rate and laser spot size. My automated characterization scans showed that the gimbal repeats a position to about ±6 µm and crosses its full focused range in 1.3 s at maximum speed. After the mechanical redesign, the prototype was fully functional across its range.
 
 ![Me wearing laser safety glasses, seated beside the laser injection setup in its black enclosure on an optical bench.](../../assets/projects/embl-laser-injection/lab-bench.jpg "even13: At the laser injection setup.")
 ![The motorized laser injection prototype on an optical bench, with a red laser beam, a fibre and a gimbal.](../../assets/projects/embl-laser-injection/laser-bench.jpg "Prototype on the optical bench.")
