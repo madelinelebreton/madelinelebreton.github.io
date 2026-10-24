@@ -363,3 +363,6 @@ Same as a leadership entry: one Markdown file in `src/content/exploring/` plus p
 - AEMET page: the Galicia station map is now its own image beside the GIF, which keeps only the website and API maps; both sit in one 22rem-tall row
 - Galicia water map page: intro rewritten (audiences, layers, explore rather than read, Kumu Project of the Week); Pablo paragraph attributes "water death" to him; Choosing Kumu cut to two reasons and the "Exploring what Kumu can do" feature tour removed; themes table softened (governance row, groundwater withdrawals, privatization linked by "some sources")
 - Galicia water map page: Pablo Gallego Picard is now credited as of Universidade da Coruña; new Sources list under Purpose (The Environment in Galicia: A Book of Images; AEMET climate atlas viewer)
+- Media page: removed the two group headings and dividers; items run in one list (research and engineering first, then athletics)
+- CV page: removed the "Download CV (PDF)" button
+- Beyond the lab: every photo row is now 12.9rem tall (the height of the French Alps rows); the per-entry two-row and tile-height settings on Ontario Cup, rings and bench were removed

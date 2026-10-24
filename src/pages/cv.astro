@@ -10,7 +10,6 @@ const hasPdf = fs.existsSync('public/Madeline-LeBreton-CV.pdf');
   </header>
   {
     hasPdf ? (
-      <p class="cv-download"><a class="btn" href="/Madeline-LeBreton-CV.pdf" download>Download CV (PDF)</a></p>
       <section class="cv-view" aria-label="CV (PDF)">
         <object data="/Madeline-LeBreton-CV.pdf#view=FitH&toolbar=0&navpanes=0" type="application/pdf" aria-label="Madeline LeBreton CV, PDF">
           <p>

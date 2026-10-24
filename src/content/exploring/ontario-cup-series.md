@@ -22,7 +22,6 @@ images:
   - src: ../../assets/explore/race-closeup.jpg
     alt: "Close-up of a rider in a white helmet and blue sunglasses at speed"
 layout: gallery
-twoRows: 5.97
 ---
 
 I won the 2024 Ontario Cup road race series with Cyclery Racing. I took the series lead by winning out of a two-rider breakaway, my third straight win of the season.

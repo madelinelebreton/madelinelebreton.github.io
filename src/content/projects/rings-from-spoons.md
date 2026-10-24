@@ -7,7 +7,6 @@ order: 1
 cover: ../../assets/projects/rings/finished-six.jpg
 coverAlt: Six finished silver rings on a white table, some with a wavy edge and some with a scroll pattern.
 focal: center
-tileHeight: 15
 gallery:
   - src: ../../assets/projects/rings/process.gif
     alt: "Animation of the ring-making process: silver spoons on a workbench, handle strips cut with a saw, a strip filed and sanded in a vise, a rotary tool, a belt sander, a strip hammered around a copper pipe, and the finished rings"

@@ -7,7 +7,6 @@ order: 2
 cover: ../../assets/projects/bench/cover.jpg
 coverAlt: Finished wooden bench beside a long outdoor table on a brick patio.
 focal: center 65%
-twoRows: 3.55
 ---
 A creative project: a wooden bench made from repurposed wood for a backyard dinner party celebrating recipes brought home from Spain.
 
