@@ -4,7 +4,7 @@ summary: A team design project for a long-lasting total hip replacement that rea
 year: "2022"
 place: McMaster University
 organization: Mechatronics Engineering, Health Solutions Engineering Design Projects
-order: 2
+order: 12
 cover: ../../assets/projects/hip-arthroplasty-implant/cover-cad-xray.png
 coverAlt: On the left, the implant in CAD, exploded into the acetabular cup, liner, femoral head and a tapered femoral stem. On the right, an X-ray of a hip affected by dysplasia, with a plate and screws fixed to the femur.
 rich: true

@@ -6,7 +6,7 @@ place: Santiago de Compostela, Spain
 organization: Fundación RIA
 tileRatio: 1.6
 mediaWide: true
-order: 2
+order: 4
 cover: ../../assets/projects/isochrone-accessibility/lead.gif
 coverAlt: "Animation of the app's map: a pin on Noia, then walking isochrones in blue, cycling in green and driving in orange spreading out around it with pharmacies marked, and the layers switched off again."
 coverAside:

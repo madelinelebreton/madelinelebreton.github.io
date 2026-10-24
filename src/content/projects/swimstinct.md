@@ -4,7 +4,7 @@ summary: "A biomedical engineering design challenge. With a team of 4, I designe
 year: "2022"
 place: McMaster University
 organization: Mechatronics Engineering, Design Solutions for Accessibility and Independence
-order: 1
+order: 11
 cover: ../../assets/projects/swimstinct/verification.gif
 coverAlt: "Animation of the device being verified in a simulated pool lane: a hand adjusts the wired device on a table with red flags as distance markers."
 facts:

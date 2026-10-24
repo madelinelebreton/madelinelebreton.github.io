@@ -24,6 +24,8 @@ linkCards:
     site: Kumu on LinkedIn
     note: Kumu features the map in its Project of the Week series.
 tags: [data]
+group: "spatial"
+latest: 7
 ---
 
 <div class="media-left">

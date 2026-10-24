@@ -14,7 +14,7 @@ facts:
     value: "Technical trainee, Instrumentation Team."
   - label: Tools
     value: "Python, Standa motorized gimbal, DataRay beam profiler, Thorlabs power meter, OXXIUS lasers."
-order: 1
+order: 2
 latest: 2
 cover: ../../assets/projects/embl-laser-injection/optical-setup.jpg
 coverAlt: "Optical layout of the laser injection system: injecting collimator, optical fiber, projecting collimator, motorized gimbal, objective, cameras and detector."

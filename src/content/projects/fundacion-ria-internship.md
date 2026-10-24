@@ -15,7 +15,7 @@ facts:
   - label: Tools
     value: "R, Python, Shiny, Leaflet, QGIS, Kumu, Adobe InDesign, Adobe Illustrator"
 tileRatio: 1.6
-order: 1
+order: 5
 cover: ../../assets/projects/fundacion-ria-internship/ria-casa-program.jpg
 coverAlt: A bright stone-walled room at Casa RIA with people seated in a half circle facing a screen that reads Yale x RIA Summer Program, and a table of architecture books in the foreground.
 tools: [R, Python, Shiny, Leaflet, QGIS, Kumu, Adobe InDesign, Adobe Illustrator]

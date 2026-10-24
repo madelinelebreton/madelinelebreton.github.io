@@ -4,7 +4,7 @@ subtitle: Extended Degrees of Freedom Robotic Visual System with Computer Vision
 summary: "Working on a team of six to extend a humanoid robot's neck with more degrees of freedom and camera tracking, for surgical robotics research."
 year: April 2026–present
 place: McMaster University
-order: 1
+order: 0
 cover: ../../assets/projects/capstone-twist2/placeholder.jpg
 coverAlt: The PCIGITI logo, in white on blue, with the lab's full name, the Wilfred and Joyce Posluns Centre for Image-Guided Innovation and Therapeutic Intervention.
 fit: contain

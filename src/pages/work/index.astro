@@ -6,10 +6,10 @@ import ProjectTile from '../../components/ProjectTile.astro';
 const projects = (await getCollection('projects', (p) => !p.data.draft && p.data.section === 'work')).sort(
   (a, b) => a.data.order - b.data.order,
 );
-// Cards are grouped under headings; within a group, newest first (set with `order` in each project's front matter).
+// Cards are grouped under headings; within a group they keep the site's original order (`order` in each project's front matter).
 const groups = [
   { id: 'research', label: 'Research and instrumentation' },
-  { id: 'robotics', label: 'Robotics, controls and aerospace' },
+  { id: 'robotics', label: 'Robotics and controls' },
   { id: 'spatial', label: 'Spatial data and systems mapping' },
   { id: 'design', label: 'Design projects' },
 ]
@@ -28,7 +28,7 @@ const ungrouped = projects.filter((p) => !p.data.group);
         <h2 id={`${g.id}-h`}>{g.label}</h2>
         <div class="panel">
           <ul class="grid">
-            {g.items.map((p) => <ProjectTile project={p} outcome />)}
+            {g.items.map((p) => <ProjectTile project={p} />)}
           </ul>
         </div>
       </section>
@@ -40,7 +40,7 @@ const ungrouped = projects.filter((p) => !p.data.group);
         <h2 id="more-h">More</h2>
         <div class="panel">
           <ul class="grid">
-            {ungrouped.map((p) => <ProjectTile project={p} outcome />)}
+            {ungrouped.map((p) => <ProjectTile project={p} />)}
           </ul>
         </div>
       </section>

@@ -4,7 +4,7 @@ summary: "Lab and course projects in embedded C on a PIC16F887, a sequential dig
 year: Course projects
 place: McMaster University
 organization: Mechatronics Engineering
-order: 3
+order: 9
 cover: ../../assets/projects/microcontroller-controls-labs/ball-and-beam.gif
 coverAlt: Animation of a ball-and-beam rig on a lab bench next to a laptop plotting the response live as the ball is balanced.
 coverWidth: 49

@@ -18,7 +18,7 @@ facts:
     value: "Team of 7."
   - label: Tools
     value: "Onshape, Autodesk Inventor stress analysis, 3D printing, Excel."
-order: 2
+order: 1
 latest: 4
 cover: ../../assets/projects/rocketry-payload/lead.jpg
 coverAlt: Assembled cylindrical payload frame on a table at a competition.

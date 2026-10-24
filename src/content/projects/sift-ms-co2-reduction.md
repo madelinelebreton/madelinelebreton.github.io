@@ -15,7 +15,7 @@ facts:
   - label: Tools
     value: "SIFT-MS (selected-ion flow-tube mass spectrometer), Autodesk Inventor, Blender, Excel, EndNote."
 tileRatio: 1.6
-order: 2
+order: 6
 latest: 3
 cover: ../../assets/projects/sift-ms-co2-reduction/lead.jpg
 coverAlt: Exploded diagram of the two-compartment flow cell with platinum counter electrode, membrane, Ag/AgCl reference electrode and copper working electrode.

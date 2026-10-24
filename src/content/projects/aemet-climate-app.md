@@ -5,7 +5,7 @@ year: "2026"
 place: Santiago de Compostela, Spain
 organization: Fundación RIA
 tileRatio: 1.6
-order: 3
+order: 7
 cover: ../../assets/projects/aemet-climate-app/lead.jpg
 coverAlt: Heatmap titled "Annual Temperature Anomalies by Station (1997-2026)", with stations down the side, years across the bottom and blue to red colouring.
 focal: 50% 40%

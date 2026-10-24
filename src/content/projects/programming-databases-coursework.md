@@ -4,7 +4,7 @@ summary: "Course projects in C, Java and SQL: a sentiment analysis tool, a resiz
 year: "2024"
 place: McMaster University
 organization: Mechatronics Engineering
-order: 3
+order: 10
 cover: ../../assets/projects/programming-databases-coursework/uml.png
 coverAlt: UML class diagram of a racing team database, with classes for team, vehicle, engine, driver, driver contract, personnel, race engineer, mechanic and director.
 fit: contain
