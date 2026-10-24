@@ -78,10 +78,10 @@ The team had a prototype; lasers of several wavelengths send light along an opti
 - **Design fix.** Found that lower transmission in one corner of the range came from a misalignment in the mechanical design of the prototype. I took my analysis to the CAD engineering office with a proposed solution, and the critical parts were redesigned and re-manufactured, which gave a fully functional prototype.
 - **Reporting.** Documented each test in structured technical reports, which the team shares with its collaborators at the ESRF and with industrial partners, and presented the results to a working group of beamline scientists and engineers from several institutions.
 
-![The EMBL Grenoble building, with four members of the instrumentation team standing in front of it.](../../assets/projects/embl-laser-injection/team.jpg "evenlg: The team at EMBL.")
-![Welcome sign for the EPN Science Campus listing the Institut Laue-Langevin, ESRF, EMBL and IBS, with a mountain behind.](../../assets/projects/embl-laser-injection/epn-campus.jpg "The EPN Campus.")
+![The EMBL Grenoble building, with four members of the instrumentation team standing in front of it.](../../assets/projects/embl-laser-injection/team.jpg "even14: The team at EMBL.")
+![Welcome sign for the EPN Science Campus listing the Institut Laue-Langevin, ESRF, EMBL and IBS, with a mountain behind.](../../assets/projects/embl-laser-injection/epn-campus.jpg "even14: The EPN Campus.")
 
-![My card on the Instrumentation team board at EMBL Grenoble, reading Madeline LEBRETON, Technical Trainee.](../../assets/projects/embl-laser-injection/staff-card.jpg "w22: My team card.")
+![My card on the Instrumentation team board at EMBL Grenoble, reading Madeline LEBRETON, Technical Trainee.](../../assets/projects/embl-laser-injection/staff-card.jpg "even14: My team card.")
 
-![Madeline standing on a walkway above the large experimental hall of the synchrotron.](../../assets/projects/embl-laser-injection/esrf-hall.jpg "even: At the synchrotron.")
-![A diffractometer at a beamline, with cables and tubing, labelled Arinax MD2-S.](../../assets/projects/embl-laser-injection/md2-diffractometer.jpg "An Arinax MD2-S diffractometer.")
+![Madeline standing on a walkway above the large experimental hall of the synchrotron.](../../assets/projects/embl-laser-injection/esrf-hall.jpg "even14: At the synchrotron.")
+![A diffractometer at a beamline, with cables and tubing, labelled Arinax MD2-S.](../../assets/projects/embl-laser-injection/md2-diffractometer.jpg "even14: An Arinax MD2-S diffractometer.")

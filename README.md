@@ -369,3 +369,4 @@ Same as a leadership entry: one Markdown file in `src/content/exploring/` plus p
 - Work page: back to the original tiles (title, year, place, organization, no one-line outcomes) in the original order, now under four headings: Research and instrumentation, Robotics and controls, Spatial data and systems mapping (includes the Kumu water-cycle map), Design projects
 - EMBL page: summary line now reads "Characterized the optics of a motorized laser injection system and fixed a misalignment in the mechanical design."
 - EMBL page: the "During the summer of 2025" intro now comes before the results paragraph
+- EMBL page: the team, EPN Campus, team card, synchrotron and diffractometer photos are all 14rem tall, the same as the laser focusing GIF
