@@ -1,0 +1,53 @@
+---
+// One dialog per page. Any element with data-gallery="<name>", data-full and data-alt opens it.
+---
+
+<dialog id="lightbox" class="lightbox" aria-label="Photo viewer">
+  <figure>
+    <img alt="" />
+  </figure>
+  <div class="lb-bar">
+    <button type="button" class="lb-prev">Previous</button>
+    <button type="button" class="lb-next">Next</button>
+    <button type="button" class="lb-close">Close</button>
+  </div>
+</dialog>
+
+<script>
+  const dlg = document.getElementById('lightbox') as HTMLDialogElement | null;
+  if (dlg) {
+    const img = dlg.querySelector('img') as HTMLImageElement;
+    const prev = dlg.querySelector('.lb-prev') as HTMLButtonElement;
+    const next = dlg.querySelector('.lb-next') as HTMLButtonElement;
+    let items: HTMLElement[] = [];
+    let i = 0;
+    const show = (n: number) => {
+      i = (n + items.length) % items.length;
+      const b = items[i];
+      img.src = b.dataset.full || '';
+      img.alt = b.dataset.alt || '';
+    };
+    document.addEventListener('click', (e) => {
+      const b = (e.target as HTMLElement).closest('[data-gallery]') as HTMLElement | null;
+      if (!b) return;
+      items = [...document.querySelectorAll<HTMLElement>(`[data-gallery="${b.dataset.gallery}"]`)];
+      prev.hidden = next.hidden = items.length < 2;
+      show(items.indexOf(b));
+      dlg.showModal();
+    });
+    prev.addEventListener('click', () => show(i - 1));
+    next.addEventListener('click', () => show(i + 1));
+    (dlg.querySelector('.lb-close') as HTMLButtonElement).addEventListener('click', () => dlg.close());
+    dlg.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft' && items.length > 1) show(i - 1);
+      if (e.key === 'ArrowRight' && items.length > 1) show(i + 1);
+    });
+    // Click on the dark backdrop closes it
+    dlg.addEventListener('click', (e) => {
+      if (e.target === dlg) dlg.close();
+    });
+    dlg.addEventListener('close', () => {
+      img.removeAttribute('src');
+    });
+  }
+</script>

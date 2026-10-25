@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import EntryList from '../../components/EntryList.astro';
+import MakingList from '../../components/MakingList.astro';
+import Lightbox from '../../components/Lightbox.astro';
+
+const projects = (await getCollection('projects', (p) => !p.data.draft && p.data.section === 'explore')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const all = (await getCollection('exploring', (e) => !e.data.draft)).sort((a, b) => a.data.order - b.data.order);
+const athletics = all.filter((e) => e.data.group === 'athletics');
+const france = all.filter((e) => e.data.group === 'france');
+const other = all.filter((e) => e.data.group === 'other');
+---
+
+<Base title="Beyond the lab" description="Staying curious with creative projects, cycling, and good times outside.">
+  <header class="page-head">
+    <h1>Beyond the lab</h1>
+    <p class="lede">Staying curious with creative projects, cycling, and good times outside.</p>
+  </header>
+
+  <section class="explore-section first" id="france-h" aria-label="Exchange in France">
+    <EntryList entries={france} uniform />
+  </section>
+
+  <section class="explore-section" aria-labelledby="athletics-h">
+    <div class="section-head">
+      <h2 id="athletics-h">Athletics</h2>
+    </div>
+    <p class="section-note">
+      I have raced road and track since 2022. During term I trained about 30 hours a week alongside a full academic course load, and in 2025 I raced for a French Nationale 1 team while living in France.
+    </p>
+    <EntryList entries={athletics} uniform />
+  </section>
+
+  <section class="explore-section" aria-labelledby="other-h">
+    <div class="section-head">
+      <h2 id="other-h">Outdoor opportunities</h2>
+    </div>
+    <EntryList entries={other} uniform />
+  </section>
+
+  <section class="explore-section" aria-labelledby="projects-h">
+    <div class="section-head">
+      <h2 id="projects-h">Creative projects</h2>
+    </div>
+    <MakingList projects={projects} />
+  </section>
+  <Lightbox />
+</Base>

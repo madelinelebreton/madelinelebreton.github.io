@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import fs from 'node:fs';
+const hasPdf = fs.existsSync('public/Madeline-LeBreton-CV.pdf');
+---
+
+<Base title="CV" description="Madeline LeBreton's CV.">
+  <header class="page-head">
+    <h1>CV</h1>
+  </header>
+  {
+    hasPdf ? (
+      <section class="cv-view" aria-label="CV (PDF)">
+        <object data="/Madeline-LeBreton-CV.pdf#view=FitH&toolbar=0&navpanes=0" type="application/pdf" aria-label="Madeline LeBreton CV, PDF">
+          <p>
+            This browser can't show PDFs inline. <a href="/Madeline-LeBreton-CV.pdf">Open the CV (PDF)</a>.
+          </p>
+        </object>
+      </section>
+    ) : (
+      <p class="notice">CV PDF coming soon.</p>
+    )
+  }
+</Base>

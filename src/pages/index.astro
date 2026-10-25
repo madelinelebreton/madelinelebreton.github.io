@@ -1,0 +1,161 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import ProjectTile from '../components/ProjectTile.astro';
+import sportPhoto from '../assets/leadership/junior-worlds-team.jpg';
+import leadershipPhoto from '../assets/leadership/future-leader-solo.jpg';
+import exploringPhoto from '../assets/explore/alps-hike.jpg';
+import collageLab from '../assets/projects/no3r-electrocatalysis/lab-computer.jpg';
+import collageGrenoble from '../assets/explore/grenoble-belvedere.jpg';
+import collageCamera from '../assets/explore/summit-camera.jpg';
+import collageBuffaz from '../assets/explore/buffaz-headshot-backdrop.jpg';
+import collageRia from '../assets/projects/fundacion-ria-internship/ria-supervisors-wide.jpg';
+import { profile, siteDescription } from '../data/profile';
+import { publications } from '../data/publications';
+
+// "Latest projects" row. Projects with a `latest` number in their front matter are pinned, left to right.
+// Any remaining slots (up to LATEST_COUNT) are filled by most recent year (e.g. "April 2026–present" -> 2026,
+// "2025–26" -> 2026), ties broken by `order`. Projects whose year is still "Year to confirm" are skipped.
+const latestYear = (y: string) =>
+  Math.max(
+    0,
+    ...(y.match(/\d{4}/g) ?? []).map(Number),
+    ...[...y.matchAll(/(\d{2})(\d{2})[–-](\d{2})(?!\d)/g)].map((m) => Number(m[1] + m[3])),
+  );
+const LATEST_COUNT = 5; // the selected projects, pinned with `latest` in their front matter
+const all = await getCollection('projects', (p) => !p.data.draft && p.data.section === 'work');
+const pinned = all.filter((p) => p.data.latest !== undefined).sort((a, b) => a.data.latest! - b.data.latest!);
+const byRecency = all
+  .filter((p) => p.data.latest === undefined && latestYear(p.data.year) > 0)
+  .sort((a, b) => latestYear(b.data.year) - latestYear(a.data.year) || a.data.order - b.data.order);
+const projects = [...pinned, ...byRecency].slice(0, LATEST_COUNT);
+// Photo strip under the name: every photo keeps its own aspect ratio and the row is the same height throughout.
+const collage = [
+  { src: collageCamera, h: 0.8, alt: 'Madeline in a winter coat and headband, taking a photograph with a film camera at dusk' },
+  { src: collageLab, h: 0.74, alt: 'Madeline in a lab coat and gloves, holding an electrode beside an H-cell at a computer in the Higgins Lab' },
+  { src: collageGrenoble, h: 0.94, alt: 'Madeline in a navy sweatshirt on a lookout above Grenoble at sunset, with mountains behind the city' },
+  { src: collageRia, h: 1, alt: 'Madeline seated in profile beside the Yale x RIA program supervisors at Fundación RIA' },
+  { src: collageBuffaz, h: 1, alt: 'Madeline smiling with her hands on her hips in a red, white and blue Team Buffaz cycling jersey' },
+];
+// Share of the strip's photo width taken by photos 1 and 2, so the bio and Publications line up with the strip's columns.
+const ratios = collage.map((c) => c.src.width / c.src.height);
+const ratioSum = ratios.reduce((a, b) => a + b, 0);
+// Entry points to the other pages. Sport and Beyond the lab both lead to the same page.
+const paths = [
+  {
+    href: '/explore/#athletics-h',
+    label: 'Sport',
+    note: 'Road and track cycling',
+    src: sportPhoto,
+    alt: 'Five Canadian team pursuit riders in team kit beside a bike on the velodrome track, with a Canada banner behind them',
+    pos: '50% 0%',
+  },
+  {
+    href: '/leadership-awards/',
+    label: 'Leadership & Awards',
+    note: 'Awards, scholarships and mentoring',
+    src: leadershipPhoto,
+    alt: 'Madeline holding an award plaque in front of a red McMaster University Engineering backdrop',
+    pos: '85% 50%',
+  },
+  {
+    href: '/explore/',
+    label: 'Beyond the lab',
+    note: 'Travel and good times outside',
+    src: exploringPhoto,
+    alt: 'Three friends smiling together on a snowy mountain ridge at sunset in the French Alps',
+    pos: '50% 55%',
+  },
+];
+---
+
+<Base title="Mechatronics engineering, McMaster University" description={siteDescription} home>
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-inner">
+      <h1>{profile.name}</h1>
+      <div class="labels">
+        <span>{profile.descriptor}</span>
+      </div>
+    </div>
+  </section>
+
+  <ul class="collage" aria-label="Photos">
+    {
+      collage.map((c) => (
+        <li style={`--r:${(c.src.width / c.src.height).toFixed(3)}`}>
+          <Image src={c.src} alt={c.alt} widths={[320, 480, 720]} sizes="(max-width: 560px) 50vw, 25vw" format="webp" quality={80} />
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="top-band" style={`--b:${(ratios[0] / ratioSum).toFixed(4)};--c:${(ratios[1] / ratioSum).toFixed(4)}`}>
+    <div class="intro">
+      <div class="intro-text">
+        <div class="section-head">
+          <h2 id="about-h">About</h2>
+        </div>
+        <p>
+          I'm a final year Mechatronics Engineering student at McMaster University, graduating in 2027. I've built and tested instruments and the software around them: a laser injection system at{' '}
+          <a href="/work/embl-laser-injection/">EMBL Grenoble</a> in France, a real-time mass spectrometry method at the{' '}
+          <a href="/work/sift-ms-co2-reduction/">National Research Council of Canada</a>, a{' '}
+          payload experiment that flew on a student <a href="/work/rocketry-payload/">rocket</a>, and geospatial data tools at{' '}
+          <a href="/work/fundacion-ria-internship/">Fundación RIA</a> in Spain.
+        </p>
+        <p>
+          Currently working on: Engineering <a href="/work/capstone-twist2/">capstone design project</a>, with the Pediatric Centre for Image Guided Innovation and Therapeutic Intervention: a neck and camera tracking system for a humanoid robot.
+        </p>
+      </div>
+    </div>
+
+    <section aria-labelledby="pubs-h">
+      <div class="section-head">
+        <h2 id="pubs-h">Publications</h2>
+      </div>
+      <ul class="pub-cards">
+        {
+          publications.map((p) => (
+            <li>
+              <p class="title">
+                <a href={p.href} rel="noopener">{p.title}</a>
+                <span class="by"><strong>{p.venue}</strong>{p.date}, {p.lab}</span>
+              </p>
+              {p.role && <p class="role">{p.role}</p>}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
+
+  <section aria-labelledby="work-h">
+    <div class="section-head">
+      <h2 id="work-h">Selected projects</h2>
+      <a class="view-all" href="/work/">View all work</a>
+    </div>
+    <div class="panel">
+      <ul class="grid latest">
+        {projects.map((p) => <ProjectTile project={p} />)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="more" aria-label="More on this site">
+  <nav class="paths home" aria-label="More on this site">
+    <ul>
+      {
+        paths.map((t) => (
+          <li>
+            <a href={t.href}>
+              <Image src={t.src} alt={t.alt} widths={[480, 720, 1000]} sizes="(max-width: 560px) 100vw, 33vw" format="webp" quality={80} style={`object-position:${t.pos}`} />
+              <span class="label">{t.label}</span>
+              <span class="note">{t.note}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  </section>
+</Base>

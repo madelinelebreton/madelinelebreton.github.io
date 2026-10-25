@@ -1,0 +1,102 @@
+---
+// Shared by Leadership & Awards and Exploring!: a text column beside a grid of 4:3 photo tiles,
+// or (layout: gallery) a grid of uncropped photos (top-aligned, in the order written) that open in a lightbox.
+import { Image, getImage } from 'astro:assets';
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entries: (CollectionEntry<'leadership'> | CollectionEntry<'exploring'>)[];
+  /** Smaller photos, for long lists (Athletics). */
+  compact?: boolean;
+  /** Show every photo uncropped at one shared height, opening in the lightbox (Exploring!). */
+  uniform?: boolean;
+}
+const { entries, compact = false, uniform = false } = Astro.props;
+const sizes = '(max-width: 560px) 100vw, (max-width: 1100px) 33vw, 304px';
+// Four photos sit better as 2 x 2 than 3 + 1.
+const colsFor = (n: number) => (n === 4 ? 2 : Math.min(n, 3));
+const fullFor = async (src: any) => (await getImage({ src, width: 1600, format: 'webp', quality: 82 })).src;
+
+const rendered = await Promise.all(
+  entries.map(async (entry) => {
+    const d = entry.data as any;
+    const gallery = uniform || d.layout === 'gallery';
+    const fulls: string[] = gallery ? await Promise.all(d.images.map((img: any) => fullFor(img.src))) : [];
+    return { entry, Content: (await render(entry)).Content, gallery, fulls };
+  }),
+);
+---
+
+<ul class:list={['lead-list', { compact, uniform }]}>
+  {
+    rendered.map(({ entry, Content, gallery, fulls }) => {
+      const d = entry.data;
+      const meta = [d.org, d.dates].filter(Boolean).join(', ');
+      return (
+        <li class='lead'>
+          <div class="lead-text">
+            <h2>{d.title}</h2>
+            {meta && <p class="lead-meta">{meta}</p>}
+            <div class="lead-body">
+              <Content />
+            </div>
+            {d.links.length > 0 && (
+              <p class="lead-links">
+                {d.links.map((l) => (
+                  <a href={l.href} rel="noopener">{l.label}</a>
+                ))}
+              </p>
+            )}
+          </div>
+          {gallery && d.images.length > 0 && (
+            <div class="panel gallery-panel" style={d.matchRow ? `width:calc((100% - ${d.matchRow.count - 1} * var(--gap)) * ${(d.images.reduce((t: number, i: any) => t + i.src.width / i.src.height, 0) / d.matchRow.ratio).toFixed(4)} + ${d.images.length - 1} * var(--gap))` : d.maxRem ? `max-width:${d.maxRem}rem` : undefined}>
+              <ul class:list={['masonry', { 'one-row': d.oneRow, 'two-rows': d.twoRows }]} style={d.twoRows ? `--fit:${d.twoRows}` : undefined}>
+                {d.images.map((img, n) => (
+                  <li style={`--r:${(img.src.width / img.src.height).toFixed(3)}`}>
+                    <button
+                      type="button"
+                      class="shot-btn"
+                      data-gallery={entry.id}
+                      data-full={fulls[n]}
+                      data-alt={img.alt}
+                      aria-label={`View larger: ${img.alt}`}
+                    >
+                      <Image
+                        src={img.src}
+                        alt=""
+                        widths={[320, 480, 640]}
+                        sizes="(max-width: 560px) 100vw, (max-width: 1100px) 50vw, 304px"
+                        format="webp"
+                        quality={78}
+                      />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {!gallery && d.images.length > 0 && (
+            <div class="panel lead-panel" style={`--cols:${colsFor(d.images.length)}`}>
+              <ul class="shots">
+                {d.images.map((img) => (
+                  <li>
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      widths={[360, 560, 800]}
+                      sizes={sizes}
+                      format="webp"
+                      quality={78}
+                      style={`object-position:${img.focal}`}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </li>
+      );
+    })
+  }
+</ul>

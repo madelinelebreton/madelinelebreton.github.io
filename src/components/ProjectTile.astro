@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  outcome?: boolean; // show the one-line outcome under the title (Work page)
+}
+const { project, outcome = false } = Astro.props;
+const d = project.data;
+const sizes = '(max-width: 560px) 100vw, (max-width: 820px) 50vw, (max-width: 1100px) 33vw, 300px';
+---
+
+<li class="tile" data-tags={d.tags.join(" ")}>
+  <a href={`/${d.section === 'explore' ? 'explore' : 'work'}/${project.id}/`}>
+    <div class:list={['frame', !d.cover && 'is-empty', d.tileRatio && 'ratio']} style={`--fit:${d.fit};` + (d.fit === 'contain' ? `background:${d.plate};` : '') + (d.tileRatio ? `aspect-ratio:${d.tileRatio};` : '')}>
+      {
+        d.cover ? (
+          <Image
+            src={d.cover}
+            alt={d.coverAlt}
+            widths={[360, 560, 800, 1200]}
+            sizes={sizes}
+            format="webp"
+            quality={78}
+            loading="lazy"
+            style={`object-position:${d.focal}` + (d.tileRatio && d.fit === 'contain' ? ';object-fit:contain' : '')}
+          />
+        ) : (
+          <div class="empty">Images coming soon</div>
+        )
+      }
+      {d.placeholder && <span class="flag">{d.placeholder}</span>}
+    </div>
+    <h3>{d.title}</h3>
+    {outcome && d.outcome && <p class="outcome">{d.outcome}</p>}
+    <p class="meta">
+      {[d.year, d.place].filter(Boolean).join(', ')}
+      {d.organization && <><br />{d.organization}</>}
+    </p>
+  </a>
+</li>
