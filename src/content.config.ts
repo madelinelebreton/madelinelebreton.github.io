@@ -12,6 +12,7 @@ const projects = defineCollection({
     z.object({
       title: z.string(),
       summary: z.string(), // one factual sentence, shown on the project page and used for SEO
+      hideLede: z.boolean().optional(), // keep the summary for SEO but don't show it under the title
       year: z.string(), // "2025" or "2025–26"
       place: z.string().optional(), // city / lab / campus
       organization: z.string().optional(),

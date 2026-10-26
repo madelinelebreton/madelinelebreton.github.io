@@ -392,3 +392,4 @@ Same as a leadership entry: one Markdown file in `src/content/exploring/` plus p
 - Work page: the four headings are removed again; it is back to one grid with the All / Instrumentation / Data / Robotics and controls filter chips, in the original order
 - CV PDF: GPA line now reads 3.9/4.0 (was 11.5/12)
 - CV PDF: restored the third capstone bullet, "Extends the neck of the TWIST2 humanoid teleoperation system with added degrees of freedom"
+- NRC page (SIFT-MS): removed the summary sentence under the title (new hideLede option keeps it only for search and link previews)

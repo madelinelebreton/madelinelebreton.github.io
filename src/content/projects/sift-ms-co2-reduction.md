@@ -1,6 +1,7 @@
 ---
 title: Real-time SIFT-MS for CO₂ reduction products
 summary: "A method that measures ten reaction products about every two seconds. It contributed to a paper in ACS Analytical Chemistry."
+hideLede: true
 year: "2024"
 place: Advanced Materials Research Facility
 organization: National Research Council Canada

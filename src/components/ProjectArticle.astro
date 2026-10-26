@@ -18,7 +18,7 @@ const { Content } = await render(project);
   <header class="page-head">
     <h1>{d.title}</h1>
     {d.subtitle && <p class="subtitle">{d.subtitle}</p>}
-    <p class="lede">{d.summary}</p>
+    {!d.hideLede && <p class="lede">{d.summary}</p>}
   </header>
 
   {d.facts ? (
