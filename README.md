@@ -393,3 +393,4 @@ Same as a leadership entry: one Markdown file in `src/content/exploring/` plus p
 - CV PDF: GPA line now reads 3.9/4.0 (was 11.5/12)
 - CV PDF: restored the third capstone bullet, "Extends the neck of the TWIST2 humanoid teleoperation system with added degrees of freedom"
 - NRC page (SIFT-MS): removed the summary sentence under the title (new hideLede option keeps it only for search and link previews)
+- Home About: the first paragraph now opens with "Hello!", and the capstone line reads "...Therapeutic Intervention, a neck and camera tracking system..." (comma instead of a colon)
