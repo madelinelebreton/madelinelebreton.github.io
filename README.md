@@ -394,3 +394,4 @@ Same as a leadership entry: one Markdown file in `src/content/exploring/` plus p
 - CV PDF: restored the third capstone bullet, "Extends the neck of the TWIST2 humanoid teleoperation system with added degrees of freedom"
 - NRC page (SIFT-MS): removed the summary sentence under the title (new hideLede option keeps it only for search and link previews)
 - Home About: the first paragraph now opens with "Hello!", and the capstone line reads "...Therapeutic Intervention, a neck and camera tracking system..." (comma instead of a colon)
+- Home Publications: the ACS Catalysis line now ends "...and designed the journal cover using Python scripting in Blender." and the ACS Analytical Chemistry line now ends "...ran flow cell experiments, and designed an automated data analysis pipeline." (the NRC page note still has the earlier "performed data analysis" wording)

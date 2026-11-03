@@ -18,7 +18,7 @@ export const publications = [
     href: 'https://pubs.acs.org/doi/10.1021/acscatal.5c06580',
     project: 'no3r-electrocatalysis',
     lab: 'Higgins Lab',
-    role: 'I ran copper based porphyrin and phthalocyanine catalyst case studies, and designed the journal cover.',
+    role: 'I ran copper based porphyrin and phthalocyanine catalyst case studies, and designed the journal cover using Python scripting in Blender.',
   },
   {
     title:
@@ -28,6 +28,6 @@ export const publications = [
     href: 'https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c04792',
     project: 'sift-ms-co2-reduction',
     lab: 'National Research Council Canada',
-    role: 'I developed the real-time quantification method, ran flow cell experiments, and performed data analysis.',
+    role: 'I developed the real-time quantification method, ran flow cell experiments, and designed an automated data analysis pipeline.',
   },
 ];
