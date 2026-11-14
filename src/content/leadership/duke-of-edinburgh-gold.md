@@ -1,6 +1,6 @@
 ---
 title: "Duke of Edinburgh's International Award, Gold Standard"
-dates: "July 2022"
+dates: "June 2022"
 order: 10
 images:
   - src: ../../assets/leadership/dofe-certificate.jpg

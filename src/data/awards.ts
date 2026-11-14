@@ -12,6 +12,6 @@ export const awards = [
   { name: "Engineering Dean's Award of Excellence", by: 'McMaster Faculty of Engineering', date: 'September 2022' },
   { name: 'McMaster Award of Academic Excellence', by: 'McMaster University', date: 'September 2022' },
   { name: "Dean's Undergraduate Student Research Award", by: 'McMaster University', date: 'September 2022' },
-  { name: "Duke of Edinburgh's International Award, Gold Standard", by: '', date: 'July 2022' },
+  { name: "Duke of Edinburgh's International Award, Gold Standard", by: '', date: 'June 2022' },
   { name: 'Ontario Scholar Award, Silver Medalist Academic Award and High Honour Roll', by: 'Woodlands Secondary School', date: 'June 2022' },
 ];
