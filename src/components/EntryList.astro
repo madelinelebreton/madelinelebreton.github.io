@@ -53,6 +53,8 @@ const rendered = await Promise.all(
             <div class="panel gallery-panel" style={d.matchRow ? `width:calc((100% - ${d.matchRow.count - 1} * var(--gap)) * ${(d.images.reduce((t: number, i: any) => t + i.src.width / i.src.height, 0) / d.matchRow.ratio).toFixed(4)} + ${d.images.length - 1} * var(--gap))` : d.maxRem ? `max-width:${d.maxRem}rem` : undefined}>
               <ul class:list={['masonry', { 'one-row': d.oneRow, 'two-rows': d.twoRows }]} style={d.twoRows ? `--fit:${d.twoRows}` : undefined}>
                 {d.images.map((img, n) => (
+                  <>
+                  {d.rowBreakBefore?.includes(n) && <li class="row-break" aria-hidden="true" />}
                   <li style={`--r:${(img.src.width / img.src.height).toFixed(3)}`}>
                     <button
                       type="button"
@@ -72,6 +74,7 @@ const rendered = await Promise.all(
                       />
                     </button>
                   </li>
+                  </>
                 ))}
               </ul>
             </div>

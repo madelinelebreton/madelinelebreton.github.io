@@ -119,6 +119,7 @@ const exploring = defineCollection({
       layout: z.enum(['tiles', 'gallery']).default('tiles'), // gallery = full-width masonry with a lightbox, for 8+ photos
       maxRem: z.number().optional(), // cap the gallery width (rem) so a twoRows gallery gets smaller photos
       twoRows: z.number().optional(), // uniform gallery sized to fill exactly 2 rows; value = summed aspect ratio of the longer row (+ a little slack)
+      rowBreakBefore: z.array(z.number()).optional(), // start a new row of photos before these image positions (0 = first photo)
       order: z.number(),
       images: z
         .array(z.object({ src: image(), alt: z.string(), focal: z.string().default('center') }))

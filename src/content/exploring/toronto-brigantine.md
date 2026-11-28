@@ -4,6 +4,7 @@ org: "Lead Hand, Toronto"
 dates: "June 2021–August 2022"
 group: other
 order: 14
+rowBreakBefore: [3]
 images:
   - src: ../../assets/explore/brigantine-mast.jpg
     alt: "Three sailors working on a yard high up the mast against a blue sky"
