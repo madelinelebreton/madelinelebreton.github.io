@@ -51,26 +51,43 @@ const rendered = await Promise.all(
         </div>
         {photos.length > 0 && (
           <div class="panel gallery-panel">
-            <ul class:list={['masonry', { 'two-rows': p.data.twoRows }]} style={p.data.twoRows ? `--fit:${p.data.twoRows}` : p.data.tileHeight ? `--h:${p.data.tileHeight}rem` : undefined}>
-              {photos.map((x, n) => (
-                <li style={`--r:${(x.src.width / x.src.height).toFixed(3)}`}>
-                  <button
-                    type="button"
-                    class="shot-btn"
-                    data-gallery={p.id}
-                    data-full={fulls[n]}
-                    data-alt={x.alt}
-                    aria-label={`View larger: ${x.alt}`}
-                  >
-                    {x.src.format === 'gif' ? (
-                      <img src={x.src.src} alt="" width={x.src.width} height={x.src.height} loading="lazy" decoding="async" />
-                    ) : (
-                      <Image src={x.src} alt="" widths={[320, 480, 640]} sizes="(max-width: 560px) 100vw, (max-width: 1100px) 50vw, 304px" format="webp" quality={78} />
-                    )}
-                  </button>
-                </li>
-              ))}
-            </ul>
+            {(() => {
+              const sizes = p.data.photoRows ?? [];
+              const rows: number[][] = [];
+              if (sizes.length) {
+                let i = 0;
+                for (const n of sizes) { rows.push(photos.slice(i, i + n).map((_, k) => i + k)); i += n; }
+                if (i < photos.length) rows.push(photos.slice(i).map((_, k) => i + k));
+              } else rows.push(photos.map((_, k) => k));
+              return rows.map((idx, ri) => (
+                <ul
+                  class:list={['masonry', { 'two-rows': p.data.twoRows && !sizes.length, 'fit-row': sizes.length > 0 }]}
+                  style={sizes.length ? `--fit:${idx.reduce((a, k) => a + photos[k].src.width / photos[k].src.height, 0).toFixed(3)};--n:${idx.length};--s:${p.data.photoRowScale?.[ri] ?? 1}` : p.data.twoRows ? `--fit:${p.data.twoRows}` : p.data.tileHeight ? `--h:${p.data.tileHeight}rem` : undefined}
+                >
+                  {idx.map((n) => {
+                    const x = photos[n];
+                    return (
+                      <li style={`--r:${(x.src.width / x.src.height).toFixed(3)}`}>
+                        <button
+                          type="button"
+                          class="shot-btn"
+                          data-gallery={p.id}
+                          data-full={fulls[n]}
+                          data-alt={x.alt}
+                          aria-label={`View larger: ${x.alt}`}
+                        >
+                          {x.src.format === 'gif' ? (
+                            <img src={x.src.src} alt="" width={x.src.width} height={x.src.height} loading="lazy" decoding="async" />
+                          ) : (
+                            <Image src={x.src} alt="" widths={[320, 480, 640]} sizes="(max-width: 560px) 100vw, (max-width: 1100px) 50vw, 304px" format="webp" quality={78} />
+                          )}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              ));
+            })()}
           </div>
         )}
       </li>

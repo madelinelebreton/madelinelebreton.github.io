@@ -42,6 +42,8 @@ const projects = defineCollection({
       coverCaption: z.string().optional(), // plain-text caption under the header image
       coverWidth: z.number().optional(), // cap the header image width on the project page, in rem (default 52)
       twoRows: z.number().optional(), // Exploring! photos fill exactly 2 rows; value = summed aspect ratio of the first row (+ slack)
+      photoRows: z.array(z.number()).optional(), // Exploring! Creative projects: photos laid out in rows of these sizes (e.g. [2, 3, 2]), each row filling the panel width
+      photoRowScale: z.array(z.number()).optional(), // with photoRows: width of each row as a fraction of the panel (default 1)
       tileHeight: z.number().optional(), // Exploring! photo height for this project, in rem (default 10)
       textWidth: z.number().optional(), // width of the main text column in rem (default: the page measure)
       rich: z.boolean().default(false), // wide page column: text on the left, figures floated to the right (see src/plugins/rehype-figures.mjs)

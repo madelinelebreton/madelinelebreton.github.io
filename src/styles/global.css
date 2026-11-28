@@ -920,6 +920,18 @@ main:focus {
 .lead-list.uniform .masonry.two-rows {
   --h: calc((100cqw - 3 * 0.5rem) / var(--fit));
 }
+/* Photos in set rows (e.g. 2 / 3 / 2): each row fills the panel width, so its height follows from the photo ratios. */
+.lead-list.uniform .gallery-panel:has(.fit-row) {
+  container-type: inline-size;
+  max-width: 48rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.lead-list.uniform .masonry.fit-row {
+  --h: calc((var(--s, 1) * 100cqw - (var(--n) - 1) * 0.5rem) / var(--fit));
+  flex-wrap: nowrap;
+}
 @media (max-width: 560px) {
   .lead-list.uniform .masonry,
   .lead-list.uniform .masonry.two-rows {
